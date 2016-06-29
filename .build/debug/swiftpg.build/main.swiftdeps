@@ -1,0 +1,131 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ConnectionParameters"
+- "connectionParams"
+- "blueSocket"
+- "backgroundQueue"
+- "createStartupMessage"
+provides-nominal:
+- "V7swiftpg20ConnectionParameters"
+provides-member:
+- ["V7swiftpg20ConnectionParameters", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "createStartupMessage"
+- "String"
+- "print"
+- "connectionParams"
+- "blueSocket"
+- "Socket"
+- "Int32"
+- "StringLiteralType"
+- "FloatLiteralType"
+- "backgroundThread"
+- "ConnectionParameters"
+- "IntegerLiteralType"
+- "backgroundQueue"
+depends-member:
+- ["Ps9AnyObject", "connectTo"]
+- ["Ps9AnyObject", "defaultConfigured"]
+- ["Ps9AnyObject", "readString"]
+- ["Ps9AnyObject", "writeString"]
+- ["Ps18BidirectionalIndex", "init"]
+- ["Ps17BitwiseOperations", "init"]
+- ["Ps7CVarArg", "init"]
+- ["Ps10Comparable", "init"]
+- ["V7swiftpg20ConnectionParameters", "Int32"]
+- ["V7swiftpg20ConnectionParameters", "String"]
+- ["V7swiftpg20ConnectionParameters", "databaseName"]
+- ["V7swiftpg20ConnectionParameters", "host"]
+- ["V7swiftpg20ConnectionParameters", "init"]
+- ["V7swiftpg20ConnectionParameters", "options"]
+- ["V7swiftpg20ConnectionParameters", "password"]
+- ["V7swiftpg20ConnectionParameters", "port"]
+- ["V7swiftpg20ConnectionParameters", "user"]
+- ["Ps29CustomPlaygroundQuickLookable", "init"]
+- ["Ps17CustomReflectable", "init"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps9Equatable", "init"]
+- ["Ps12ForwardIndex", "init"]
+- ["Ps8Hashable", "init"]
+- ["Vs5Int32", "init"]
+- ["Ps7Integer", "init"]
+- ["Ps17IntegerArithmetic", "init"]
+- ["Ps25IntegerLiteralConvertible", "init"]
+- ["Ps17RandomAccessIndex", "init"]
+- ["Ps13SignedInteger", "init"]
+- ["Ps12SignedNumber", "init"]
+- ["C6Socket6Socket", "connectTo"]
+- ["C6Socket6Socket", "defaultConfigured"]
+- ["C6Socket6Socket", "readString"]
+- ["C6Socket6Socket", "writeString"]
+- ["P6Socket12SocketReader", "connectTo"]
+- ["P6Socket12SocketReader", "defaultConfigured"]
+- ["P6Socket12SocketReader", "readString"]
+- ["P6Socket12SocketReader", "writeString"]
+- ["P6Socket12SocketWriter", "connectTo"]
+- ["P6Socket12SocketWriter", "defaultConfigured"]
+- ["P6Socket12SocketWriter", "readString"]
+- ["P6Socket12SocketWriter", "writeString"]
+- ["Ps10Strideable", "init"]
+- ["Ps33_BuiltinIntegerLiteralConvertible", "init"]
+- ["Ps14_Incrementable", "init"]
+- ["Ps8_Integer", "init"]
+- ["Ps18_IntegerArithmetic", "init"]
+- ["Ps22_RandomAccessAmbiguity", "init"]
+- ["Ps14_SignedInteger", "init"]
+depends-nominal:
+- "Ps9AnyObject"
+- "Ps18BidirectionalIndex"
+- "Ps17BitwiseOperations"
+- "Ps7CVarArg"
+- "Ps10Comparable"
+- "V7swiftpg20ConnectionParameters"
+- "Ps29CustomPlaygroundQuickLookable"
+- "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- "Ps12ForwardIndex"
+- "Ps8Hashable"
+- "Vs5Int32"
+- "Ps7Integer"
+- "Ps17IntegerArithmetic"
+- "Ps25IntegerLiteralConvertible"
+- "Ps17RandomAccessIndex"
+- "Ps13SignedInteger"
+- "Ps12SignedNumber"
+- "C6Socket6Socket"
+- "P6Socket12SocketReader"
+- "P6Socket12SocketWriter"
+- "Ps10Strideable"
+- "Ps33_BuiltinIntegerLiteralConvertible"
+- "Ps14_Incrementable"
+- "Ps8_Integer"
+- "Ps18_IntegerArithmetic"
+- "Ps22_RandomAccessAmbiguity"
+- "Ps14_SignedInteger"
+depends-dynamic-lookup:
+depends-external:
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/shims/Visibility.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/shims/UnicodeShims.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/shims/RuntimeStubs.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/shims/SwiftStdint.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/shims/SwiftStddef.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/shims/RuntimeShims.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/shims/LibcShims.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/shims/RefCount.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/shims/HeapObject.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/shims/GlobalObjects.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/shims/FoundationShims.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/shims/CoreFoundationShims.h"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/shims/module.map"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Users/haris/workspace/swift_work/swift-pg/.build/debug/Socket.swiftmodule"
+interface-hash: "098ac684ef02bbe6cf28ee93de56d077"

@@ -1,0 +1,17 @@
+{
+  "": {
+    "swift-dependencies": "/Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.build/master.swiftdeps"
+  },
+  "/Users/haris/workspace/swift_work/swift-pg/Packages/NSLinux-1.1.0/Sources/Dispatch.swift": {
+    "dependencies": "/Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.build/Dispatch.d",
+    "object": "/Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.build/Dispatch.swift.o",
+    "swiftmodule": "/Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.build/Dispatch~partial.swiftmodule",
+    "swift-dependencies": "/Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.build/Dispatch.swiftdeps"
+  },
+  "/Users/haris/workspace/swift_work/swift-pg/Packages/NSLinux-1.1.0/Sources/NSString.swift": {
+    "dependencies": "/Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.build/NSString.d",
+    "object": "/Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.build/NSString.swift.o",
+    "swiftmodule": "/Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.build/NSString~partial.swiftmodule",
+    "swift-dependencies": "/Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.build/NSString.swiftdeps"
+  }
+}

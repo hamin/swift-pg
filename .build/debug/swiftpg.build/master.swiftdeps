@@ -1,0 +1,6 @@
+version: "Apple Swift version 3.0-dev (LLVM b010debd0e, Clang 3e4d01d89b, Swift 7182c58cb2)"
+options: "7f291eb725e503b5a9708199d8804bc4"
+build_time: [512168753, 396446000]
+inputs:
+  "/Users/haris/workspace/swift_work/swift-pg/Sources/Dispatch.swift": [511594546, 0]
+  "/Users/haris/workspace/swift_work/swift-pg/Sources/main.swift": !private [512168749, 0]

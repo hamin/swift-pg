@@ -1,0 +1,6 @@
+version: "Apple Swift version 3.0-dev (LLVM b010debd0e, Clang 3e4d01d89b, Swift 7182c58cb2)"
+options: "2db5b589bf64923a8747a21a3210420e"
+build_time: [512168702, 439486000]
+inputs:
+  "/Users/haris/workspace/swift_work/swift-pg/Packages/NSLinux-1.1.0/Sources/Dispatch.swift": [512168701, 0]
+  "/Users/haris/workspace/swift_work/swift-pg/Packages/NSLinux-1.1.0/Sources/NSString.swift": [512168701, 0]

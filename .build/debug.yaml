@@ -1,0 +1,68 @@
+client:
+  name: swift-build
+tools: {}
+targets:
+  test: []
+  default: [<Socket.module>, <NSLinux.module>, "<swift-pg.module>", "<swift-pg.exe>"]
+commands: 
+  /Users/haris/workspace/swift_work/swift-pg/.build/debug/Socket.build:
+    tool: mkdir
+    outputs: ["/Users/haris/workspace/swift_work/swift-pg/.build/debug/Socket.build"]
+
+  <Socket.module>:
+    tool: swift-compiler
+    executable: /Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/bin/swiftc
+    module-name: Socket
+    module-output-path: /Users/haris/workspace/swift_work/swift-pg/.build/debug/Socket.swiftmodule
+    inputs: []
+    outputs: [<Socket.module>, "/Users/haris/workspace/swift_work/swift-pg/.build/debug/Socket.build/Socket.swift.o", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/Socket.build/SocketProtocols.swift.o", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/Socket.build/SocketUtils.swift.o"]
+    import-paths: /Users/haris/workspace/swift_work/swift-pg/.build/debug
+    temps-path: /Users/haris/workspace/swift_work/swift-pg/.build/debug/Socket.build
+    objects: ["/Users/haris/workspace/swift_work/swift-pg/.build/debug/Socket.build/Socket.swift.o", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/Socket.build/SocketProtocols.swift.o", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/Socket.build/SocketUtils.swift.o"]
+    other-args: ["-j8", "-Onone", "-g", "-D", SWIFT_PACKAGE, "-enable-testing", "-F", /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks, "-target", "x86_64-apple-macosx10.10", "-sdk", /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk]
+    sources: ["/Users/haris/workspace/swift_work/swift-pg/Packages/Socket-0.3.0/Sources/Socket.swift", "/Users/haris/workspace/swift_work/swift-pg/Packages/Socket-0.3.0/Sources/SocketProtocols.swift", "/Users/haris/workspace/swift_work/swift-pg/Packages/Socket-0.3.0/Sources/SocketUtils.swift"]
+    is-library: true
+
+  /Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.build:
+    tool: mkdir
+    outputs: ["/Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.build"]
+
+  <NSLinux.module>:
+    tool: swift-compiler
+    executable: /Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/bin/swiftc
+    module-name: NSLinux
+    module-output-path: /Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.swiftmodule
+    inputs: []
+    outputs: [<NSLinux.module>, "/Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.build/Dispatch.swift.o", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.build/NSString.swift.o"]
+    import-paths: /Users/haris/workspace/swift_work/swift-pg/.build/debug
+    temps-path: /Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.build
+    objects: ["/Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.build/Dispatch.swift.o", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.build/NSString.swift.o"]
+    other-args: ["-j8", "-Onone", "-g", "-D", SWIFT_PACKAGE, "-enable-testing", "-F", /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks, "-target", "x86_64-apple-macosx10.10", "-sdk", /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk]
+    sources: ["/Users/haris/workspace/swift_work/swift-pg/Packages/NSLinux-1.1.0/Sources/Dispatch.swift", "/Users/haris/workspace/swift_work/swift-pg/Packages/NSLinux-1.1.0/Sources/NSString.swift"]
+    is-library: true
+
+  /Users/haris/workspace/swift_work/swift-pg/.build/debug/swiftpg.build:
+    tool: mkdir
+    outputs: ["/Users/haris/workspace/swift_work/swift-pg/.build/debug/swiftpg.build"]
+
+  <swift-pg.module>:
+    tool: swift-compiler
+    executable: /Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/bin/swiftc
+    module-name: swiftpg
+    module-output-path: /Users/haris/workspace/swift_work/swift-pg/.build/debug/swiftpg.swiftmodule
+    inputs: [<NSLinux.module>, <Socket.module>]
+    outputs: ["<swift-pg.module>", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/swiftpg.build/Dispatch.swift.o", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/swiftpg.build/main.swift.o"]
+    import-paths: /Users/haris/workspace/swift_work/swift-pg/.build/debug
+    temps-path: /Users/haris/workspace/swift_work/swift-pg/.build/debug/swiftpg.build
+    objects: ["/Users/haris/workspace/swift_work/swift-pg/.build/debug/swiftpg.build/Dispatch.swift.o", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/swiftpg.build/main.swift.o"]
+    other-args: ["-j8", "-Onone", "-g", "-D", SWIFT_PACKAGE, "-enable-testing", "-F", /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks, "-target", "x86_64-apple-macosx10.10", "-sdk", /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk]
+    sources: ["/Users/haris/workspace/swift_work/swift-pg/Sources/Dispatch.swift", "/Users/haris/workspace/swift_work/swift-pg/Sources/main.swift"]
+    is-library: false
+
+  <swift-pg.exe>:
+    tool: shell
+    description: Linking .build/debug/swift-pg
+    inputs: [<NSLinux.module>, <Socket.module>, "<swift-pg.module>", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/swiftpg.build/Dispatch.swift.o", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/swiftpg.build/main.swift.o"]
+    outputs: ["<swift-pg.exe>", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/swift-pg"]
+    args: ["/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-03-24-a.xctoolchain/usr/bin/swiftc", "-target", "x86_64-apple-macosx10.10", "-sdk", /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk, "-g", "-L/Users/haris/workspace/swift_work/swift-pg/.build/debug", "-o", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/swift-pg", "-emit-executable", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/swiftpg.build/Dispatch.swift.o", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/swiftpg.build/main.swift.o", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.build/Dispatch.swift.o", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/NSLinux.build/NSString.swift.o", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/Socket.build/Socket.swift.o", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/Socket.build/SocketProtocols.swift.o", "/Users/haris/workspace/swift_work/swift-pg/.build/debug/Socket.build/SocketUtils.swift.o"]
+
