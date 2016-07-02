@@ -1,7 +1,0 @@
-version: "Apple Swift version 3.0-dev (LLVM b010debd0e, Clang 3e4d01d89b, Swift 7182c58cb2)"
-options: "9c355a0e6bcbad9b7919b4dc51e79eb6"
-build_time: [512168702, 439512000]
-inputs:
-  "/Users/haris/workspace/swift_work/swift-pg/Packages/Socket-0.3.0/Sources/Socket.swift": [512168700, 0]
-  "/Users/haris/workspace/swift_work/swift-pg/Packages/Socket-0.3.0/Sources/SocketProtocols.swift": [512168700, 0]
-  "/Users/haris/workspace/swift_work/swift-pg/Packages/Socket-0.3.0/Sources/SocketUtils.swift": [512168700, 0]
