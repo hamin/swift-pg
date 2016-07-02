@@ -12,26 +12,48 @@ import Socket
 // }
 
 extension NSMutableData {
-    
+
     func appendInt32(value : Int32) {
         var val = value.bigEndian
-        self.appendBytes(&val, length: sizeofValue(val))
+        self.append(&val, length: sizeofValue(val))
     }
-    
+
     func appendInt16(value : Int16) {
         var val = value.bigEndian
-        self.appendBytes(&val, length: sizeofValue(val))
+        self.append(&val, length: sizeofValue(val))
     }
-    
+
     func appendInt8(value : Int8) {
         var val = value
-        self.appendBytes(&val, length: sizeofValue(val))
+        self.append(&val, length: sizeofValue(val))
     }
-    
+
     func appendString(value : String) {
         value.withCString {
-            self.appendBytes($0, length: Int(strlen($0)) + 1)
+            self.append($0, length: Int(strlen($0)) + 1)
         }
+    }
+}
+
+extension NSData {
+    public func firstASCIIByte() -> String {
+        var bytes = [UInt8](repeating: 0, count: 1)
+        getBytes(&bytes, length: length)
+        return String(UnicodeScalar( bytes[0] ))
+    }
+    
+    public func firstByteAsInt32BE() -> UInt32 {
+//        var bytes = [UInt8](repeating: 0, count: length)
+//        getBytes(&bytes, length: length)
+        
+//        return bytes[0].bigEndian
+        
+        var value : UInt32 = 0
+//        let data = NSData(bytes: bytes, length: length)
+//        data.getBytes(&value, length: 4)
+        getBytes(&value, length: sizeofValue(bytes[0]))
+        value = UInt32(bigEndian: value)
+        return value
     }
 }
 
@@ -44,126 +66,113 @@ public struct ConnectionParameters {
     public let password: String
 }
 
-let connectionParams = ConnectionParameters(host: "127.0.0.1", port: Int32(5432), options: "", databaseName: "metabase-pager-copy", user: "metabase-dev", password: "")
+//let u = "pager-dev"
+//let db = "pager-dev"
+
+//let u = "metabase-dev"
+//let db = "metabase-pager-copy"
+
+//let url = "127.0.0.1"
+
+
+let u = "pagerpg"
+let db = "postgres"
+let url = "pagerpg.czzazgihja6p.us-east-1.rds.amazonaws.com"
+
+let connectionParams = ConnectionParameters(host: url, port: Int32(5432), options: "", databaseName: db, user: u, password: "")
 
 
 var blueSocket: Socket
-let backgroundQueue = backgroundThread()
+//let backgroundQueue = backgroundThread()
 
-func createStartupMessage(user:String, database:String ){
+func startupMessage(username:String, database:String) -> NSMutableData {
+    let protocolVersion = 196608
     
+    let connectionData = NSMutableData()
+    connectionData.appendString(value: "user")
+    connectionData.appendString(value: username)
+    connectionData.appendString(value: "database")
+    connectionData.appendString(value: database)
+    connectionData.appendString(value: "") // undocumented final termination thingydoodle
+    
+    
+    let mutableData = NSMutableData()
+    mutableData.appendInt32(value: Int32(connectionData.length) + 8)
+    mutableData.appendInt32(value: Int32(protocolVersion))
+    mutableData.append(connectionData)
+//    mutableData.appendString(value: "")
+    
+    print(mutableData)
+    
+    return mutableData
+}
+
+func handleMessage(data:NSMutableData) {
+    let ident = data.firstASCIIByte()
+    
+    switch ident {
+    case "R":
+        // Auth
+        handleAuth(data: data)
+        break
+    default:
+        break
+    }
+}
+
+func handleAuth(data:NSMutableData) {
+    let firstInt = data.firstByteAsInt32BE()
+    
+    switch firstInt {
+    case 0:
+        // AuthenticationOk
+        print("AuthenticationOk")
+        break
+    case 2:
+        // AuthenticationKerberosV5;
+        break
+    case 3:
+        // AuthenticationCleartextPassword;
+        break
+    case 5:
+        // AuthenticationMD5Password;
+        break;
+    case 6:
+        // AuthenticationSCMCredential;
+        break
+    case 7:
+        // AuthenticationGSS;
+        break
+    case 9:
+        // AuthenticationSSPI;
+        break
+    case 8:
+        // AuthenticationGSSContinue;
+        break
+    default:
+        break
+    }
 }
 
 do {
-	blueSocket = try Socket.makeDefault()
+	blueSocket = try Socket.create()
     try blueSocket.connect(to: connectionParams.host, port: connectionParams.port)
     print("cool: \(blueSocket.isConnected)")
-//    try blueSocket.write(from: "COOL StuFF")
     
-//    let date = "\u{0000}\u{0000}\u{00008}\u{0000}\u{0003}\u{0000}\u{0000}user\u{0000}metabase-dev\u{0000}database\u{0000}metabase-pager-copy\u{0000}\u{0000}"
-////    try blueSocket.write(from: "\u{0000}\u{0000}\u{00008}\u{0000}\u{0003}\u{0000}\u{0000}user\u{0000}metabase-dev\u{0000}database\u{0000}metabase-pager-copy\u{0000}\u{0000}" )
-////    let foo = try blueSocket.readString()
-//    try blueSocket.write(from: date)
-//    var data = NSMutableData()
-//    print(data)
-//    let foo = try blueSocket.read(into: data)
-//    print(foo)
-//    print(data)
-//    print(data.length)
+    let username = connectionParams.user
+    let database = connectionParams.databaseName
+    let data = startupMessage(username: username, database: database)
+    try blueSocket.write(from: data)
     
-//    var startupMessageData = NSMutableData(capacity: (22 + connectionParams.user.characters.count + 1 + connectionParams.databaseName.characters.count + 1 + 1))
-//    startupMessageData.
-//    startupMessageData?.appendInt8(0)
-//    startupMessageData?.appendInt32(196608)
-//    startupMessageData?.appendString("user")
-//    startupMessageData?.appendString(connectionParams.user)
-//    startupMessageData?.appendString("database")
-//    startupMessageData?.appendString(connectionParams.databaseName)
-//    startupMessageData?.appendInt8(0)
-//    print(startupMessageData)
+    let response = NSMutableData()
+    _ = try blueSocket.read(into: response)
+    
+    handleMessage(data: response)
     
     
-    
-    var startupMessageData = NSMutableData()
-//    startupMessageData.appendInt8(0)
-//    startupMessageData.appendInt8(0)
-    startupMessageData.appendInt32(8)
-//    startupMessageData.appendInt32(0)
-    startupMessageData.appendInt32(3)
-//    startupMessageData.appendInt32(0)
-    startupMessageData.appendInt32(0)
-    startupMessageData.appendString("user")
-    startupMessageData.appendInt32(0)
-    startupMessageData.appendString(connectionParams.user)
-    startupMessageData.appendInt32(0)
-    startupMessageData.appendString("database")
-    startupMessageData.appendInt32(0)
-    startupMessageData.appendString(connectionParams.databaseName)
-    startupMessageData.appendInt32(0)
-    startupMessageData.appendInt32(0)
-    print(startupMessageData)
-    try blueSocket.write(from: startupMessageData)
-    
-//    let foo = try blueSocket.readString()
-//    print(foo)
-    
+
 } catch let error as NSError{
     // do something with the error
     print("we have an error creating BlueSocket")
     print(error.localizedDescription)
 }
-
-//var createStartupMessage = function(user_name, database_name){
-//    
-//    var buffer_size = 22 + user_name.length + 1 + database_name.length + 1 + 1;
-//    var StartUpMessage = new Buffer(buffer_size);
-//    var position_in_buffer = 0;
-//    
-//    StartUpMessage.writeUInt32BE(buffer_size, 0);
-//    position_in_buffer += 4;
-//    
-//    StartUpMessage.writeUInt32BE(196608, position_in_buffer); //version 3.0
-//    position_in_buffer += 4;
-//    
-//    position_in_buffer = addMessageSegment(StartUpMessage, "user", position_in_buffer);
-//    position_in_buffer = addMessageSegment(StartUpMessage, user_name, position_in_buffer);
-//    
-//    position_in_buffer = addMessageSegment(StartUpMessage, "database", position_in_buffer);
-//    position_in_buffer = addMessageSegment(StartUpMessage, database_name, position_in_buffer);
-//    
-//    //Add the last null terminator to the buffer
-//    addNullTerminatorToMessageSegment(StartUpMessage, position_in_buffer);
-//    
-//    console.log("The StartUpMessage looks like this in Hexcode: " + StartUpMessage.toString('hex'));
-//    console.log("The length of the StartupMessage in Hexcode is: " + StartUpMessage.toString('hex').length);
-//    
-//    return StartUpMessage;
-//    
-//};
-
-//var addMessageSegment = function(StartUpMessage, message_segment, position_in_buffer){
-//    
-//    var bytes_in_message_segment = Buffer.byteLength(message_segment);
-//    
-//    StartUpMessage.write(message_segment, position_in_buffer, StartUpMessage - position_in_buffer, 'utf8');
-//    position_in_buffer = position_in_buffer + bytes_in_message_segment;
-//    
-//    position_in_buffer = addNullTerminatorToMessageSegment(StartUpMessage, position_in_buffer);
-//    
-//    return position_in_buffer;
-//    
-//};
-//
-//
-//var addNullTerminatorToMessageSegment = function(StartUpMessage, position_in_buffer){
-//    
-//    StartUpMessage.writeUInt8(0, position_in_buffer);
-//    position_in_buffer = position_in_buffer + 1;
-//    
-//    return position_in_buffer;
-//    
-//};
-
-
-
-
