@@ -14,6 +14,24 @@
       <BuildActionEntry buildForTesting = "YES" buildForRunning = "YES" buildForProfiling = "YES" buildForArchiving = "YES" buildForAnalyzing = "YES">
         <BuildableReference
           BuildableIdentifier = "primary"
+          BlueprintIdentifier = "______Target_CryptoEssentials"
+          BuildableName = "CryptoEssentials.framework"
+          BlueprintName = "CryptoEssentials"
+          ReferencedContainer = "container:swift-pg.xcodeproj">
+        </BuildableReference>
+      </BuildActionEntry>
+      <BuildActionEntry buildForTesting = "YES" buildForRunning = "YES" buildForProfiling = "YES" buildForArchiving = "YES" buildForAnalyzing = "YES">
+        <BuildableReference
+          BuildableIdentifier = "primary"
+          BlueprintIdentifier = "______Target_MD5"
+          BuildableName = "MD5.framework"
+          BlueprintName = "MD5"
+          ReferencedContainer = "container:swift-pg.xcodeproj">
+        </BuildableReference>
+      </BuildActionEntry>
+      <BuildActionEntry buildForTesting = "YES" buildForRunning = "YES" buildForProfiling = "YES" buildForArchiving = "YES" buildForAnalyzing = "YES">
+        <BuildableReference
+          BuildableIdentifier = "primary"
           BlueprintIdentifier = "______Target_swift_pg"
           BuildableName = "swift-pg"
           BlueprintName = "swift-pg"

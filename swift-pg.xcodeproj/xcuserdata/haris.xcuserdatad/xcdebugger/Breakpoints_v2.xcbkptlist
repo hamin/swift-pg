@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sources/main.swift"
-            timestampString = "489102478.293604"
+            timestampString = "489706579.348162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176">
+            startingLineNumber = "488"
+            endingLineNumber = "488">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sources/main.swift"
-            timestampString = "489102478.293604"
+            timestampString = "489706579.348162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159">
+            startingLineNumber = "457"
+            endingLineNumber = "457">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -38,12 +38,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sources/main.swift"
-            timestampString = "489102478.293604"
+            timestampString = "489704745.742895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "handleAuth(data:)"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "handleMessage(data:socket:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -54,12 +54,49 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sources/main.swift"
-            timestampString = "489102478.293604"
+            timestampString = "489704745.742895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "handleMessage(data:)"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "handleMessage(data:socket:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = "malloc_error_break"
+            moduleName = "">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "malloc_error_break"
+                  moduleName = "libsystem_malloc.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/main.swift"
+            timestampString = "489706579.348162"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "451"
+            endingLineNumber = "451"
+            landmarkName = "handleDataRow(data:socket:fields:buffer:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -70,12 +107,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sources/main.swift"
-            timestampString = "489102478.293604"
+            timestampString = "489706579.348162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "handleAuth(data:)"
+            startingLineNumber = "445"
+            endingLineNumber = "445"
+            landmarkName = "handleRowDescription(data:socket:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -86,12 +123,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sources/main.swift"
-            timestampString = "489102478.293604"
+            timestampString = "489706579.348162"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
-            landmarkName = "handleAuth(data:)"
+            startingLineNumber = "445"
+            endingLineNumber = "445"
+            landmarkName = "handleRowDescription(data:socket:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -102,12 +139,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sources/main.swift"
-            timestampString = "489102478.293604"
+            timestampString = "489704745.742895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "handleAuth(data:)"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "handleMessage(data:socket:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -118,12 +155,108 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sources/main.swift"
-            timestampString = "489102478.293604"
+            timestampString = "489704745.742895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "handleAuth(data:)"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
+            landmarkName = "handleRowDescription(data:socket:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/main.swift"
+            timestampString = "489706579.348162"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "445"
+            endingLineNumber = "445"
+            landmarkName = "handleRowDescription(data:socket:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Packages/Socket-0.5.20/Sources/Socket.swift"
+            timestampString = "489646857.284091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2211"
+            endingLineNumber = "2211"
+            landmarkName = "readDataIntoStorage()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/main.swift"
+            timestampString = "489704745.742895"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "handleMessage(data:socket:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/main.swift"
+            timestampString = "489704745.742895"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
+            landmarkName = "handleAuth(data:socket:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Packages/Socket-0.5.20/Sources/Socket.swift"
+            timestampString = "489700861.267409"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2243"
+            endingLineNumber = "2243"
+            landmarkName = "readDataIntoStorage()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/main.swift"
+            timestampString = "489706429.639779"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "434"
+            endingLineNumber = "434"
+            landmarkName = "handleRowDescription(data:socket:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
