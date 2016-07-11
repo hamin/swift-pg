@@ -25,6 +25,9 @@ public enum BackendMessageType: String {
     case DataRow = "D"
     case CommandCompletion = "C"
     case ReadyForQuery = "Z"
+    case ErrorResponse = "E"
+    case ParameterStatus = "S"
+    case BackendKeyData = "K"
 }
 
 struct BackendMessage {
