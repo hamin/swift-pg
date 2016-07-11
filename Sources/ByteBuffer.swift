@@ -256,4 +256,13 @@ final class ByteBuffer {
         }
         return nil;
     }
+    
+    func decodeStringForBytes(stringLength:Int) -> String? {
+        if stringLength > 0 {
+            let data =  buffer.subdata(with: NSRange(location: readIndex, length: stringLength));
+            readIndex += stringLength;
+            return String(data: data, encoding: NSUTF8StringEncoding)
+        }
+        return nil
+    }
 }

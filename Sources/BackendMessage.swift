@@ -37,7 +37,7 @@ struct BackendMessage {
         self.messageType = BackendMessageType(rawValue: type)!
     }
     
-    func parse() {
+    mutating func parse() {
         switch messageType {
         case .RowDescription:
             parseRowDescription()
@@ -99,7 +99,7 @@ struct BackendMessage {
             let objByteArray = Array(objByteSlice)
             let buffer = ByteBuffer(data: objByteArray)
             
-            let backendMessage = BackendMessage(buffer: buffer, type: type)
+            var backendMessage = BackendMessage(buffer: buffer, type: type)
             objects.append(backendMessage)
             backendMessage.parse()
             ptr = startingPtr + Int(objLength) + 1
@@ -116,9 +116,8 @@ extension BackendMessage {
     'T' | int32 Len | int16 numfields
     +
     str col  | int32 tableoid | int16 colno | int32 typeoid | int16 typelen | int32 typmod | int16 format
-    
     */
-    func parseRowDescription() {
+    mutating func parseRowDescription() {
         
         // Offset ident 'T' byte and int32 frame length Bytes
         buffer.readIndex = 1 // Skip 'T' byte
@@ -180,32 +179,52 @@ extension BackendMessage {
         }
         
         print(fields)
+        self.parseResult = fields
+        buffer.readIndex = 0 // reset buffer index
     }
     
-    //var dataRow = function dataRow(messageObj) {
-    //    var numColumns = messageObj.data.readInt16BE(0),
-    //    i,
-    //    columnValueLength,
-    //    columnValue,
-    //    ptr = 2; // Start after the length data.
-    //    messageObj.rowValue = [];
-    //    for (i = 0; i < numColumns; i += 1) {
-    //        columnValueLength = messageObj.data.readInt32BE(ptr);
-    //        ptr += 4;
-    //
-    //        if (columnValueLength >= 0) {
-    //            columnValue = messageObj.data.toString('utf8', ptr, ptr + columnValueLength);
-    //            ptr += columnValueLength;
-    //        } else {
-    //            columnValue = null;
-    //        }
-    //        messageObj.rowValue.push(columnValue);
-    //    }
-    //    messageObj.data = undefined;
-    //    return messageObj;
-    //};
     
-    func parseDataRow() {
-        //
+    /** Data Row Frame **
+     
+     'D' | int32 Len | int16 number of columns
+     +
+     (for each field)
+     int32 value length  | str string value
+     */
+    mutating func parseDataRow() {
+        buffer.readIndex = 1 // Skip 'D' byte
+        
+        let foo = String(UnicodeScalar( buffer.buffer.byteArray[0] ))
+        print(foo)
+        
+        let _ = buffer.decodeInt()
+        let numColumns = buffer.decodeInt16()
+        
+        var row:[Any?] = []
+        
+        for _ in 0..<numColumns {
+            
+            // Note: This might be a hack? Last byte might be missing a null terminator??!?!
+            if (buffer.readIndex + 4) > buffer.buffer.length  {
+                buffer.readIndex = buffer.buffer.length - 4
+            }
+            
+            let columnValueLength = buffer.decodeInt()
+            
+            if columnValueLength >= 0 {
+                // Note: This might be a hack? Last byte might be missing a null terminator??!?!
+                if (buffer.readIndex + Int(columnValueLength)) > buffer.buffer.length  {
+                    buffer.readIndex = buffer.buffer.length - Int(columnValueLength)
+                }
+                
+                let value = buffer.decodeStringForBytes(stringLength: Int(columnValueLength))
+                print("val: \(value)")
+                row.append(value)
+            } else {
+                row.append(nil)
+            }
+        }
+        self.parseResult = row
+        buffer.readIndex = 0 // reset buffer index
     }
 }
