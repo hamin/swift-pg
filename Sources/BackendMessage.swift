@@ -13,6 +13,7 @@ struct FieldInfo {
     let tableId:Int32 // Object ID of the parent table, or 0 if not part of a table
     let columnId:Int16 // Attribute number of the column, or 0 if not part of a table
     let typeId:Int32 // Object ID of the data type
+    let type:PGType // Corresponding PGType to typeId
     let typeSize:Int16 // data type size; negative = variable-width.  see pg_type.typlen
     let typeModifier:Int32 // type modifier; see pg_attribute.atttypmod
     let formatCode:Int16 // ormat code for the field; 0 = text; 1 = binary.  0 means unknown when responding to a Describe
@@ -157,6 +158,7 @@ extension BackendMessage {
             let tableId = buffer.decodeInt()
             let columnId = buffer.decodeInt16()
             let typeId = buffer.decodeInt()
+            let type = PGType(rawValue: Int(typeId))!
             let typeSize = buffer.decodeInt16()
             let typeModifier = buffer.decodeInt()
             
@@ -173,6 +175,7 @@ extension BackendMessage {
                 tableId: tableId,
                 columnId: columnId,
                 typeId: typeId,
+                type: type,
                 typeSize: typeSize,
                 typeModifier: typeModifier,
                 formatCode: formatCode
