@@ -34,14 +34,14 @@ public enum BackendMessageType: String {
 struct BackendMessage {
     let messageType:BackendMessageType
     let buffer:ByteBuffer
-    var parseResult:Any?
+    var parsedResult:Any?
     
     init(buffer:ByteBuffer, type:String) {
         self.buffer = buffer
         self.messageType = BackendMessageType(rawValue: type)!
     }
     
-    mutating func parse() {
+    private mutating func parse() {
         switch messageType {
         case .RowDescription:
             parseRowDescription()
@@ -185,7 +185,7 @@ extension BackendMessage {
         }
         
         print(fields)
-        self.parseResult = fields
+        self.parsedResult = fields
         buffer.readIndex = 0 // reset buffer index
     }
     
@@ -230,7 +230,7 @@ extension BackendMessage {
                 row.append(nil)
             }
         }
-        self.parseResult = row
+        self.parsedResult = row
         buffer.readIndex = 0 // reset buffer index
     }
 }
