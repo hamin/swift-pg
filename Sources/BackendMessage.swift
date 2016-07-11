@@ -182,6 +182,29 @@ extension BackendMessage {
         print(fields)
     }
     
+    //var dataRow = function dataRow(messageObj) {
+    //    var numColumns = messageObj.data.readInt16BE(0),
+    //    i,
+    //    columnValueLength,
+    //    columnValue,
+    //    ptr = 2; // Start after the length data.
+    //    messageObj.rowValue = [];
+    //    for (i = 0; i < numColumns; i += 1) {
+    //        columnValueLength = messageObj.data.readInt32BE(ptr);
+    //        ptr += 4;
+    //
+    //        if (columnValueLength >= 0) {
+    //            columnValue = messageObj.data.toString('utf8', ptr, ptr + columnValueLength);
+    //            ptr += columnValueLength;
+    //        } else {
+    //            columnValue = null;
+    //        }
+    //        messageObj.rowValue.push(columnValue);
+    //    }
+    //    messageObj.data = undefined;
+    //    return messageObj;
+    //};
+    
     func parseDataRow() {
         //
     }
