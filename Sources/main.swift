@@ -201,7 +201,8 @@ func handleMessage(data:NSMutableData, socket:Socket) {
     case "T":
         // Row Description
 //        handleRowDescription(data: d, socket: socket)
-        let result = parseRawBuffer(data: data)
+//        let result = parseRawBuffer(data: data)
+        let result = BackendMessage.parseRawBuffer(data: data)
         
         break
     case "E":
@@ -290,164 +291,6 @@ func handleAuth(data:NSMutableData, socket:Socket) {
         break
     }
 }
-// RowDescription
-// Byte1('T')
-// Int32 - Length
-// Int16 - number of fields in a row
-// For Each Field:
-// String - field name
-// Int32 - Object ID of the parent table, or 0 if not part of a table
-// Int16 - Attribute number of the column, or 0 if not part of a table
-// Int32 - Object ID of the data type
-// Int16 - data type size; negative = variable-width.  see pg_type.typlen
-// Int32 - type modifier; see pg_attribute.atttypmod
-// Int16 - format code for the field; 0 = text; 1 = binary.  0 means unknown when responding to a Describe
-// Adds rowDescription property to messageObj.  Value is an array of objects.  Each object:
-//  fieldName
-//  parentTableObjectID
-//  attributeNumber
-//  dataTypeObjectID
-//  dataTypeSize
-//  typeModifier
-//  formatCode
-//var rowDescription = function rowDescription(messageObj) {
-//    var numberOfFields = messageObj.data.readInt16BE(0),
-//    fieldDescription,
-//    i,
-//    curVal,
-//    strLen = 0,
-//    ptr = 2; // start after numberOfFields
-//    messageObj.rowDescription = [];
-//    for (i = 0; i < numberOfFields; i += 1) {
-//        fieldDescription = {};
-//        strLen = 0;
-//        curVal = messageObj.data[ptr];
-//        while (curVal !== 0) {
-//            strLen += 1;
-//            curVal = messageObj.data[ptr + strLen];
-//        }
-//        fieldDescription.fieldName = messageObj.data.toString('utf8', ptr, ptr + strLen);
-//        ptr += strLen + 1;
-//        fieldDescription.parentTableObjectID = messageObj.data.readInt32BE(ptr);
-//        ptr += 4;
-//        fieldDescription.attributeNumber = messageObj.data.readInt16BE(ptr);
-//        ptr += 2;
-//        fieldDescription.dataTypeObjectID = messageObj.data.readInt32BE(ptr);
-//        ptr += 4;
-//        fieldDescription.dataTypeSize = messageObj.data.readInt16BE(ptr);
-//        ptr += 2;
-//        fieldDescription.typeModifier = messageObj.data.readInt32BE(ptr);
-//        ptr += 4;
-//        fieldDescription.formatCode = messageObj.data.readInt16BE(ptr);
-//        ptr += 2;
-//        messageObj.rowDescription.push(fieldDescription);
-//    }
-//    return messageObj;
-//};
-
-struct FieldInfo {
-    let field:String
-    let tableId:Int32
-    let columnId:Int16
-    let typeId:Int32
-    let typeSize:Int16
-    let typeModifier:Int32
-    let formatCode:Int16
-}
-
-/**
- 
- ** Row Description Frame **
- 
-'T' | int32 Len | int16 numfields
-                +
-str col  | int32 tableoid | int16 colno | int32 typeoid | int16 typelen | int32 typmod | int16 format
-
-*/
-func handleRowDescription(data:NSMutableData, socket:Socket) {
-    let buffer = ByteBuffer(buffer: data)
-
-    // Offset ident 'T' byte and int32 frame length Bytes
-//    let numFieldsByteOffset = 1 + sizeof(UInt32)
-//    buffer.readIndex = numFieldsByteOffset
-    
-    buffer.readIndex = 1 // Skip 'T' byte
-    
-    let rowDescriptionLength = Int(buffer.decodeInt())
-    
-    let numberOfFields = buffer.decodeInt16()
-    
-    print("Row description Length: \(rowDescriptionLength)")
-    
-    print("Number of fields: \(numberOfFields)")
-//    print(data.byteArray)
-    
-    var fields:[FieldInfo] = []
-    
-    for _ in 0..<numberOfFields {
-        var strLength = 0
-        var nameBytes:[Int8] = []
-        
-        var continueParsingName = true
-        
-        while continueParsingName {
-            let curVal = buffer.decodeByte()
-            if curVal == 0 {
-                continueParsingName = false
-            } else {
-                nameBytes.append(curVal)
-                strLength += 1
-            }
-        }
-        
-        let fieldName = NSString(cString: nameBytes, encoding: NSUTF8StringEncoding)! as String
-        print(fieldName)
-        
-        let field = FieldInfo(
-            field: fieldName,
-            tableId:
-            buffer.decodeInt(),
-            columnId: buffer.decodeInt16(),
-            typeId: buffer.decodeInt(),
-            typeSize: buffer.decodeInt16(),
-            typeModifier: buffer.decodeInt(),
-            formatCode: buffer.decodeInt16()
-        )
-        
-        fields.append(field)
-    }
-    
-    print(fields)
-    
-//    handleDataRow(data: data, socket: socket, fields: fields, buffer: buffer)
-    var curDataIndex = rowDescriptionLength + 1
-//    let dataAscii = data.ASCIIByteAtIndex(index: startingDataIndex )
-    
-    var dataRowBuffers:[ByteBuffer] = []
-    var dataRowData:[NSData] = []
-    
-    var continueParsingDataRows = true
-    
-    while continueParsingDataRows {
-        if data.ASCIIByteAtIndex(index: curDataIndex ) == "D" {
-            _ = buffer.decodeByte()
-            let dataRowLength = Int(buffer.decodeInt())
-            print(dataRowLength)
-            let range = NSMakeRange(curDataIndex, dataRowLength)
-            let rowData = data.subdata(with: range)
-            dataRowData.append(rowData)
-            let dataRowBuffer = ByteBuffer(data: rowData)
-            dataRowBuffers.append(dataRowBuffer)
-            curDataIndex += dataRowLength
-        } else {
-            continueParsingDataRows = false
-        }
-    }
-    
-    
-    
-}
-
 
 //var dataRow = function dataRow(messageObj) {
 //    var numColumns = messageObj.data.readInt16BE(0),
@@ -471,13 +314,6 @@ func handleRowDescription(data:NSMutableData, socket:Socket) {
 //    messageObj.data = undefined;
 //    return messageObj;
 //};
-
-func handleDataRow(data:NSMutableData, socket:Socket, fields:[FieldInfo], buffer: ByteBuffer) {
-    
-    
-    
-    
-}
 
 do {
 	blueSocket = try Socket.create()
