@@ -200,7 +200,9 @@ func handleMessage(data:NSMutableData, socket:Socket) {
         break
     case "T":
         // Row Description
-        handleRowDescription(data: d, socket: socket)
+//        handleRowDescription(data: d, socket: socket)
+        let result = parseRawBuffer(data: data)
+        
         break
     case "E":
         //"ErrorResponse";
