@@ -160,6 +160,10 @@ func handleMessage(data:NSMutableData, socket:Socket) {
 //        handleRowDescription(data: d, socket: socket)
 //        let result = parseRawBuffer(data: data)
         let result = BackendMessage.parseRawBuffer(data: data)
+        let queryResult = QueryResult(messages: result.0)
+        
+        let parsedResult = queryResult.parsedResult()
+        print(parsedResult)
         
         break
     case "E":

@@ -587,7 +587,7 @@ public enum PGType: Int {
         case .RegroleArray: return .ArrayRegrole
         }
     }
-    
+
     func swiftType() -> Swift.Any {
         switch self {
         case .Bool: return Swift.Bool

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66426F4E1D34A1B7003815BC /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66426F4D1D34A1B7003815BC /* QueryResult.swift */; };
 		668BD37C1D33501F0043B7B0 /* NSData+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BD37B1D33501F0043B7B0 /* NSData+Bytes.swift */; };
 		668BD37E1D3404640043B7B0 /* PGType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BD37D1D3404640043B7B0 /* PGType.swift */; };
 		66A83A661D29008D000828FE /* Digest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A83A651D29008D000828FE /* Digest.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		66426F4D1D34A1B7003815BC /* QueryResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryResult.swift; sourceTree = "<group>"; };
 		668BD37B1D33501F0043B7B0 /* NSData+Bytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+Bytes.swift"; sourceTree = "<group>"; };
 		668BD37D1D3404640043B7B0 /* PGType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGType.swift; sourceTree = "<group>"; };
 		66A83A651D29008D000828FE /* Digest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Digest.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				66A83A671D2A27FB000828FE /* BackendMessage.swift */,
 				668BD37B1D33501F0043B7B0 /* NSData+Bytes.swift */,
 				668BD37D1D3404640043B7B0 /* PGType.swift */,
+				66426F4D1D34A1B7003815BC /* QueryResult.swift */,
 			);
 			name = "swift-pg";
 			path = Sources;
@@ -391,6 +394,7 @@
 				668BD37E1D3404640043B7B0 /* PGType.swift in Sources */,
 				__src_cc_ref_Sources/ByteBuffer.swift /* ByteBuffer.swift in Sources */,
 				66A83A661D29008D000828FE /* Digest.swift in Sources */,
+				66426F4E1D34A1B7003815BC /* QueryResult.swift in Sources */,
 				66A83A681D2A27FB000828FE /* BackendMessage.swift in Sources */,
 				__src_cc_ref_Sources/main.swift /* main.swift in Sources */,
 			);

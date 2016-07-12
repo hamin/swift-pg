@@ -104,8 +104,8 @@ struct BackendMessage {
             let buffer = ByteBuffer(data: objByteArray)
             
             var backendMessage = BackendMessage(buffer: buffer, type: type)
-            objects.append(backendMessage)
             backendMessage.parse()
+            objects.append(backendMessage)
             ptr = startingPtr + Int(objLength) + 1
         }
         
@@ -152,7 +152,11 @@ extension BackendMessage {
                 }
             }
             
-            let fieldName = NSString(cString: nameBytes, encoding: NSUTF8StringEncoding)! as String
+            var fieldName = ""
+            
+            for byte in nameBytes {
+                fieldName.append(UnicodeScalar(Int(byte)))
+            }
             print(fieldName)
             
             let tableId = buffer.decodeInt()
