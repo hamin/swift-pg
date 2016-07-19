@@ -1,7 +1,6 @@
 import Foundation
 import Dispatch
 import Socket
-import MD5
 
 // do {
 //     let connection = try Connection(host: "127.0.0.1")
@@ -46,104 +45,6 @@ let connectionParams = ConnectionParameters(host: url, port: Int32(5432), option
 var blueSocket: Socket
 //let backgroundQueue = backgroundThread()
 
-func startupMessage(username:String, database:String) -> NSMutableData {
-    let protocolVersion = 196608
-    
-    let connectionData = NSMutableData()
-    connectionData.appendString(value: "user")
-    connectionData.appendString(value: username)
-    connectionData.appendString(value: "database")
-    connectionData.appendString(value: database)
-    connectionData.appendString(value: "") // undocumented final termination thingydoodle
-    
-    
-    let mutableData = NSMutableData()
-    mutableData.appendInt32(value: Int32(connectionData.length) + 8)
-    mutableData.appendInt32(value: Int32(protocolVersion))
-    mutableData.append(connectionData)
-//    mutableData.appendString(value: "")
-    
-    print(mutableData)
-    
-    return mutableData
-}
-
-// Query (F)
-// Byte1('Q')
-// Int32 - Length
-// String - Query String
-//exports.query = function (queryString) {
-//    queryString = queryString + '\u0000';
-//    var messageLength = Buffer.byteLength(queryString) + 5,
-//    buf = new Buffer(messageLength);
-//    buf.write('Q');
-//    buf.writeInt32BE(messageLength - 1, 1);
-//    buf.write(queryString, 5);
-//    return buf;
-//};
-func makeQuery(query:String) -> NSMutableData {
-    let queryData = NSMutableData()
-    
-//    queryData.appendString(value: "Q")
-    queryData.appendStringWithoutTerminator(value: "Q")
-    queryData.appendInt32(value: query.lengthOfBytes(using: NSUTF8StringEncoding) + 5)
-    queryData.appendString(value: query)
-    return queryData
-}
-
-
-// PasswordMessage (F)
-// Byte1('p')
-// Int32 - Length
-// String - password (encrypted or plaintext, depending on Backend request)
-//exports.passwordMessage = function (password, encrypted, user, salt) {
-//    
-//    var messageLength = 5,
-//    buf,
-//    passusermd5,
-//    md5hash;
-//    encrypted = (encrypted === undefined) ? false : encrypted;
-//    if (encrypted === true) {
-//        passusermd5 = crypto.createHash('md5').update(password + user).digest('hex');
-//        md5hash = crypto.createHash('md5').update(passusermd5 + salt.toString('binary')).digest('hex');
-//        password = 'md5' + md5hash;
-//        console.log(salt);
-//        console.log(password);
-//    }
-//    messageLength += Buffer.byteLength(password);
-//    
-//    buf = new Buffer(messageLength + 1);
-//    buf.write('p', 0);
-//    buf.writeInt32BE(messageLength, 1);
-//    buf.write(password + '\u0000', 5);
-//    
-//    return buf;
-//};
-func makePasswordMessage(password:String, encrypted:Bool, user:String, salt:String) -> NSMutableData {
-    var messageLength = 5
-    
-    var pwd = ""
-    
-    if encrypted == true {
-        let passUserMD5 = MD5.calculate(password + user)
-        let passUserMD55DigestHex = Digest(bytes: passUserMD5).hex
-        
-        let md5hash = MD5.calculate(passUserMD55DigestHex + salt)
-        let md5hashDigextHex = Digest(bytes: md5hash).hex
-
-        pwd = "md5" + md5hashDigextHex
-    }
-    
-    messageLength += pwd.utf16.count
-    
-    let passwordData = NSMutableData()
-    passwordData.appendStringWithoutTerminator(value: "P")
-    passwordData.appendInt32(value: Int32(messageLength))
-    passwordData.appendString(value: pwd)
-    
-    return passwordData
-}
-
 func handleMessage(data:NSMutableData, socket:Socket) {
     let d = NSMutableData(data: data)
     let ident = d.firstASCIIByte()
@@ -157,8 +58,6 @@ func handleMessage(data:NSMutableData, socket:Socket) {
         break
     case "T":
         // Row Description
-//        handleRowDescription(data: d, socket: socket)
-//        let result = parseRawBuffer(data: data)
         let result = BackendMessage.parseRawBuffer(data: data)
         let queryResult = QueryResult(messages: result.0)
         
@@ -174,6 +73,7 @@ func handleMessage(data:NSMutableData, socket:Socket) {
         break
     case "K":
         //"BackendKeyData";
+        print("BackendKeyData")
         break
     case "Z":
         //"ReadyForQuery";
@@ -206,10 +106,9 @@ func handleAuth(data:NSMutableData, socket:Socket) {
         // AuthenticationOk
         print("AuthenticationOk")
         
-//        let query = makeQuery(query: "SELECT NOW() AS current_time")
-        let query = makeQuery(query: "SELECT * FROM core_user;")
+        let query = QueryMessage(query: "SELECT * FROM core_user;")
         do {
-            try socket.write(from: query)
+            try socket.write(from: query.messageData())
             
             
             let queryResponse = NSMutableData()
@@ -249,6 +148,7 @@ func handleAuth(data:NSMutableData, socket:Socket) {
         // AuthenticationGSSContinue;
         break
     default:
+        print("Unhandled Message")
         break
     }
 }
@@ -264,26 +164,13 @@ do {
     
     let username = connectionParams.user
     let database = connectionParams.databaseName
-    let data = startupMessage(username: username, database: database)
+    let data = StartupMessage(username:username, database:database).messageData()
     try blueSocket.write(from: data)
     
     let response = NSMutableData()
     _ = try blueSocket.read(into: response)
     
     handleMessage(data: response, socket: blueSocket)
-    
-//    let queryData = makeQuery(query: "SELECT NOW() AS current_time")
-//    
-//    try blueSocket.write(from: queryData)
-//    
-//    
-//    let queryResponse = NSMutableData()
-//    _ = try blueSocket.read(into: queryResponse)
-//
-//    print("queryresponse ascii")
-//    
-//    print(queryResponse.firstASCIIByte())
-
 } catch let error as NSError{
     // do something with the error
     print("we have an error creating BlueSocket")

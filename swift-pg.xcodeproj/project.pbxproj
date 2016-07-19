@@ -1,601 +1,607 @@
 // !$*UTF8*$!
 {
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		66426F4E1D34A1B7003815BC /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66426F4D1D34A1B7003815BC /* QueryResult.swift */; };
-		668BD37C1D33501F0043B7B0 /* NSData+Bytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BD37B1D33501F0043B7B0 /* NSData+Bytes.swift */; };
-		668BD37E1D3404640043B7B0 /* PGType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668BD37D1D3404640043B7B0 /* PGType.swift */; };
-		66A83A661D29008D000828FE /* Digest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A83A651D29008D000828FE /* Digest.swift */; };
-		66A83A681D2A27FB000828FE /* BackendMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A83A671D2A27FB000828FE /* BackendMessage.swift */; };
-		_LinkFileRef_CryptoEssentials_via_MD5 /* CryptoEssentials.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_CryptoEssentials" /* CryptoEssentials.framework */; };
-		_LinkFileRef_CryptoEssentials_via_swift_pg /* CryptoEssentials.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_CryptoEssentials" /* CryptoEssentials.framework */; };
-		_LinkFileRef_MD5_via_swift_pg /* MD5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_MD5" /* MD5.framework */; };
-		_LinkFileRef_Socket_via_swift_pg /* Socket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_Socket" /* Socket.framework */; };
-		"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/ArrayProtocol.swift" /* ArrayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/ArrayProtocol.swift" /* ArrayProtocol.swift */; };
-		"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Base64.swift" /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Base64.swift" /* Base64.swift */; };
-		"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/BlockMode.swift" /* BlockMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/BlockMode.swift" /* BlockMode.swift */; };
-		"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/BytesSequence.swift" /* BytesSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/BytesSequence.swift" /* BytesSequence.swift */; };
-		"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Cipher.swift" /* Cipher.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Cipher.swift" /* Cipher.swift */; };
-		"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Compatibility.swift" /* Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Compatibility.swift" /* Compatibility.swift */; };
-		"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Generics.swift" /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Generics.swift" /* Generics.swift */; };
-		"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/HashProtocol.swift" /* HashProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/HashProtocol.swift" /* HashProtocol.swift */; };
-		"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/IntExtension.swift" /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/IntExtension.swift" /* IntExtension.swift */; };
-		"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/IntegerConvertible.swift" /* IntegerConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/IntegerConvertible.swift" /* IntegerConvertible.swift */; };
-		"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/NSData+Extensions.swift" /* NSData+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/NSData+Extensions.swift" /* NSData+Extensions.swift */; };
-		"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Operators.swift" /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Operators.swift" /* Operators.swift */; };
-		"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Padding.swift" /* Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Padding.swift" /* Padding.swift */; };
-		"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/SecureBytes.swift" /* SecureBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/SecureBytes.swift" /* SecureBytes.swift */; };
-		"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Utils.swift" /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Utils.swift" /* Utils.swift */; };
-		"__src_cc_ref_Packages/MD5-0.7.2/Sources/MD5.swift" /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/MD5-0.7.2/Sources/MD5.swift" /* MD5.swift */; };
-		"__src_cc_ref_Packages/Socket-0.5.20/Sources/Socket.swift" /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/Socket-0.5.20/Sources/Socket.swift" /* Socket.swift */; };
-		"__src_cc_ref_Packages/Socket-0.5.20/Sources/SocketProtocols.swift" /* SocketProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/Socket-0.5.20/Sources/SocketProtocols.swift" /* SocketProtocols.swift */; };
-		"__src_cc_ref_Packages/Socket-0.5.20/Sources/SocketUtils.swift" /* SocketUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/Socket-0.5.20/Sources/SocketUtils.swift" /* SocketUtils.swift */; };
-		__src_cc_ref_Sources/ByteBuffer.swift /* ByteBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/ByteBuffer.swift /* ByteBuffer.swift */; };
-		__src_cc_ref_Sources/main.swift /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/main.swift /* main.swift */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		66A83A621D28FFA9000828FE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = __RootObject_ /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "______Target_CryptoEssentials";
-			remoteInfo = CryptoEssentials;
-		};
-		66A83A631D28FFA9000828FE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = __RootObject_ /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "______Target_MD5";
-			remoteInfo = MD5;
-		};
-		66A83A641D28FFA9000828FE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = __RootObject_ /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "______Target_Socket";
-			remoteInfo = Socket;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		66426F4D1D34A1B7003815BC /* QueryResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryResult.swift; sourceTree = "<group>"; };
-		668BD37B1D33501F0043B7B0 /* NSData+Bytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSData+Bytes.swift"; sourceTree = "<group>"; };
-		668BD37D1D3404640043B7B0 /* PGType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGType.swift; sourceTree = "<group>"; };
-		66A83A651D29008D000828FE /* Digest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Digest.swift; sourceTree = "<group>"; };
-		66A83A671D2A27FB000828FE /* BackendMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackendMessage.swift; sourceTree = "<group>"; };
-		__PBXFileRef_CryptoEssentials_Info.plist /* CryptoEssentials_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = CryptoEssentials_Info.plist; path = "swift-pg.xcodeproj/CryptoEssentials_Info.plist"; sourceTree = SOURCE_ROOT; };
-		__PBXFileRef_MD5_Info.plist /* MD5_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = MD5_Info.plist; path = "swift-pg.xcodeproj/MD5_Info.plist"; sourceTree = SOURCE_ROOT; };
-		__PBXFileRef_Package.swift /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/ArrayProtocol.swift" /* ArrayProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayProtocol.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Base64.swift" /* Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/BlockMode.swift" /* BlockMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockMode.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/BytesSequence.swift" /* BytesSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BytesSequence.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Cipher.swift" /* Cipher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cipher.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Compatibility.swift" /* Compatibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compatibility.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Generics.swift" /* Generics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generics.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/HashProtocol.swift" /* HashProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashProtocol.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/IntExtension.swift" /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/IntegerConvertible.swift" /* IntegerConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerConvertible.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/NSData+Extensions.swift" /* NSData+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSData+Extensions.swift"; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Operators.swift" /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Padding.swift" /* Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Padding.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/SecureBytes.swift" /* SecureBytes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureBytes.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Utils.swift" /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/MD5-0.7.2/Sources/MD5.swift" /* MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/Socket-0.5.20/Sources/Socket.swift" /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/Socket-0.5.20/Sources/SocketProtocols.swift" /* SocketProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketProtocols.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_Packages/Socket-0.5.20/Sources/SocketUtils.swift" /* SocketUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketUtils.swift; sourceTree = "<group>"; };
-		__PBXFileRef_Socket_Info.plist /* Socket_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Socket_Info.plist; path = "swift-pg.xcodeproj/Socket_Info.plist"; sourceTree = SOURCE_ROOT; };
-		__PBXFileRef_Sources/ByteBuffer.swift /* ByteBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteBuffer.swift; sourceTree = "<group>"; };
-		__PBXFileRef_Sources/main.swift /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		"__PBXFileRef_swift-pg.xcodeproj/Configs/Project.xcconfig" /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Project.xcconfig; path = "swift-pg.xcodeproj/Configs/Project.xcconfig"; sourceTree = "<group>"; };
-		"_____Product_CryptoEssentials" /* CryptoEssentials.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoEssentials.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"_____Product_MD5" /* MD5.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MD5.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"_____Product_Socket" /* Socket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Socket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"_____Product_swift_pg" /* swift-pg */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "swift-pg"; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		"___LinkPhase_CryptoEssentials" /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		"___LinkPhase_MD5" /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
-			files = (
-				_LinkFileRef_CryptoEssentials_via_MD5 /* CryptoEssentials.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		"___LinkPhase_Socket" /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		"___LinkPhase_swift_pg" /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
-			files = (
-				_LinkFileRef_CryptoEssentials_via_swift_pg /* CryptoEssentials.framework in Frameworks */,
-				_LinkFileRef_MD5_via_swift_pg /* MD5.framework in Frameworks */,
-				_LinkFileRef_Socket_via_swift_pg /* Socket.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		Dependencies_ /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				"_______Group_Socket" /* Socket */,
-				"_______Group_CryptoEssentials" /* CryptoEssentials */,
-				"_______Group_MD5" /* MD5 */,
-			);
-			name = Dependencies;
-			sourceTree = "<group>";
-		};
-		"___RootGroup_" = {
-			isa = PBXGroup;
-			children = (
-				__PBXFileRef_Package.swift /* Package.swift */,
-				"_____Configs_" /* Configs */,
-				"_____Sources_" /* Sources */,
-				Dependencies_ /* Dependencies */,
-				"____Products_" /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		"____Products_" /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				"_____Product_Socket" /* Socket.framework */,
-				"_____Product_CryptoEssentials" /* CryptoEssentials.framework */,
-				"_____Product_MD5" /* MD5.framework */,
-				"_____Product_swift_pg" /* swift-pg */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		"_____Configs_" /* Configs */ = {
-			isa = PBXGroup;
-			children = (
-				"__PBXFileRef_swift-pg.xcodeproj/Configs/Project.xcconfig" /* Project.xcconfig */,
-			);
-			name = Configs;
-			sourceTree = "<group>";
-		};
-		"_____Sources_" /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				"_______Group_swift_pg" /* swift-pg */,
-			);
-			name = Sources;
-			sourceTree = "<group>";
-		};
-		"_______Group_CryptoEssentials" /* CryptoEssentials */ = {
-			isa = PBXGroup;
-			children = (
-				"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/ArrayProtocol.swift" /* ArrayProtocol.swift */,
-				"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Base64.swift" /* Base64.swift */,
-				"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/BlockMode.swift" /* BlockMode.swift */,
-				"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/BytesSequence.swift" /* BytesSequence.swift */,
-				"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Cipher.swift" /* Cipher.swift */,
-				"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Compatibility.swift" /* Compatibility.swift */,
-				"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Generics.swift" /* Generics.swift */,
-				"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/HashProtocol.swift" /* HashProtocol.swift */,
-				"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/IntegerConvertible.swift" /* IntegerConvertible.swift */,
-				"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/IntExtension.swift" /* IntExtension.swift */,
-				"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/NSData+Extensions.swift" /* NSData+Extensions.swift */,
-				"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Operators.swift" /* Operators.swift */,
-				"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Padding.swift" /* Padding.swift */,
-				"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/SecureBytes.swift" /* SecureBytes.swift */,
-				"__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Utils.swift" /* Utils.swift */,
-				__PBXFileRef_CryptoEssentials_Info.plist /* CryptoEssentials_Info.plist */,
-			);
-			name = CryptoEssentials;
-			path = "Packages/CryptoEssentials-0.7.3/Sources";
-			sourceTree = "<group>";
-		};
-		"_______Group_MD5" /* MD5 */ = {
-			isa = PBXGroup;
-			children = (
-				"__PBXFileRef_Packages/MD5-0.7.2/Sources/MD5.swift" /* MD5.swift */,
-				__PBXFileRef_MD5_Info.plist /* MD5_Info.plist */,
-			);
-			name = MD5;
-			path = "Packages/MD5-0.7.2/Sources";
-			sourceTree = "<group>";
-		};
-		"_______Group_Socket" /* Socket */ = {
-			isa = PBXGroup;
-			children = (
-				"__PBXFileRef_Packages/Socket-0.5.20/Sources/Socket.swift" /* Socket.swift */,
-				"__PBXFileRef_Packages/Socket-0.5.20/Sources/SocketProtocols.swift" /* SocketProtocols.swift */,
-				"__PBXFileRef_Packages/Socket-0.5.20/Sources/SocketUtils.swift" /* SocketUtils.swift */,
-				__PBXFileRef_Socket_Info.plist /* Socket_Info.plist */,
-			);
-			name = Socket;
-			path = "Packages/Socket-0.5.20/Sources";
-			sourceTree = "<group>";
-		};
-		"_______Group_swift_pg" /* swift-pg */ = {
-			isa = PBXGroup;
-			children = (
-				__PBXFileRef_Sources/ByteBuffer.swift /* ByteBuffer.swift */,
-				__PBXFileRef_Sources/main.swift /* main.swift */,
-				66A83A651D29008D000828FE /* Digest.swift */,
-				66A83A671D2A27FB000828FE /* BackendMessage.swift */,
-				668BD37B1D33501F0043B7B0 /* NSData+Bytes.swift */,
-				668BD37D1D3404640043B7B0 /* PGType.swift */,
-				66426F4D1D34A1B7003815BC /* QueryResult.swift */,
-			);
-			name = "swift-pg";
-			path = Sources;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		"______Target_CryptoEssentials" /* CryptoEssentials */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = "_______Confs_CryptoEssentials" /* Build configuration list for PBXNativeTarget "CryptoEssentials" */;
-			buildPhases = (
-				CompilePhase_CryptoEssentials /* Sources */,
-				"___LinkPhase_CryptoEssentials" /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CryptoEssentials;
-			productName = CryptoEssentials;
-			productReference = "_____Product_CryptoEssentials" /* CryptoEssentials.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		"______Target_MD5" /* MD5 */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = "_______Confs_MD5" /* Build configuration list for PBXNativeTarget "MD5" */;
-			buildPhases = (
-				CompilePhase_MD5 /* Sources */,
-				"___LinkPhase_MD5" /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				__Dependency_CryptoEssentials /* PBXTargetDependency */,
-			);
-			name = MD5;
-			productName = MD5;
-			productReference = "_____Product_MD5" /* MD5.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		"______Target_Socket" /* Socket */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = "_______Confs_Socket" /* Build configuration list for PBXNativeTarget "Socket" */;
-			buildPhases = (
-				CompilePhase_Socket /* Sources */,
-				"___LinkPhase_Socket" /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Socket;
-			productName = Socket;
-			productReference = "_____Product_Socket" /* Socket.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		"______Target_swift_pg" /* swift-pg */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = "_______Confs_swift_pg" /* Build configuration list for PBXNativeTarget "swift-pg" */;
-			buildPhases = (
-				CompilePhase_swift_pg /* Sources */,
-				"___LinkPhase_swift_pg" /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				__Dependency_CryptoEssentials /* PBXTargetDependency */,
-				__Dependency_MD5 /* PBXTargetDependency */,
-				__Dependency_Socket /* PBXTargetDependency */,
-			);
-			name = "swift-pg";
-			productName = swift_pg;
-			productReference = "_____Product_swift_pg" /* swift-pg */;
-			productType = "com.apple.product-type.tool";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		__RootObject_ /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 9999;
-			};
-			buildConfigurationList = "___RootConfs_" /* Build configuration list for PBXProject "swift-pg" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = "___RootGroup_";
-			productRefGroup = "____Products_" /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				"______Target_Socket" /* Socket */,
-				"______Target_CryptoEssentials" /* CryptoEssentials */,
-				"______Target_MD5" /* MD5 */,
-				"______Target_swift_pg" /* swift-pg */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXSourcesBuildPhase section */
-		CompilePhase_CryptoEssentials /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/ArrayProtocol.swift" /* ArrayProtocol.swift in Sources */,
-				"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Base64.swift" /* Base64.swift in Sources */,
-				"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/BlockMode.swift" /* BlockMode.swift in Sources */,
-				"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/BytesSequence.swift" /* BytesSequence.swift in Sources */,
-				"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Cipher.swift" /* Cipher.swift in Sources */,
-				"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Compatibility.swift" /* Compatibility.swift in Sources */,
-				"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Generics.swift" /* Generics.swift in Sources */,
-				"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/HashProtocol.swift" /* HashProtocol.swift in Sources */,
-				"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/IntegerConvertible.swift" /* IntegerConvertible.swift in Sources */,
-				"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/IntExtension.swift" /* IntExtension.swift in Sources */,
-				"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/NSData+Extensions.swift" /* NSData+Extensions.swift in Sources */,
-				"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Operators.swift" /* Operators.swift in Sources */,
-				"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Padding.swift" /* Padding.swift in Sources */,
-				"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/SecureBytes.swift" /* SecureBytes.swift in Sources */,
-				"__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Utils.swift" /* Utils.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CompilePhase_MD5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				"__src_cc_ref_Packages/MD5-0.7.2/Sources/MD5.swift" /* MD5.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CompilePhase_Socket /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				"__src_cc_ref_Packages/Socket-0.5.20/Sources/Socket.swift" /* Socket.swift in Sources */,
-				"__src_cc_ref_Packages/Socket-0.5.20/Sources/SocketProtocols.swift" /* SocketProtocols.swift in Sources */,
-				668BD37C1D33501F0043B7B0 /* NSData+Bytes.swift in Sources */,
-				"__src_cc_ref_Packages/Socket-0.5.20/Sources/SocketUtils.swift" /* SocketUtils.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CompilePhase_swift_pg /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				668BD37E1D3404640043B7B0 /* PGType.swift in Sources */,
-				__src_cc_ref_Sources/ByteBuffer.swift /* ByteBuffer.swift in Sources */,
-				66A83A661D29008D000828FE /* Digest.swift in Sources */,
-				66426F4E1D34A1B7003815BC /* QueryResult.swift in Sources */,
-				66A83A681D2A27FB000828FE /* BackendMessage.swift in Sources */,
-				__src_cc_ref_Sources/main.swift /* main.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		__Dependency_CryptoEssentials /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "______Target_CryptoEssentials" /* CryptoEssentials */;
-			targetProxy = 66A83A621D28FFA9000828FE /* PBXContainerItemProxy */;
-		};
-		__Dependency_MD5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "______Target_MD5" /* MD5 */;
-			targetProxy = 66A83A631D28FFA9000828FE /* PBXContainerItemProxy */;
-		};
-		__Dependency_Socket /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "______Target_Socket" /* Socket */;
-			targetProxy = 66A83A641D28FFA9000828FE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin XCBuildConfiguration section */
-		_ReleaseConf_CryptoEssentials /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = "swift-pg.xcodeproj/CryptoEssentials_Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-			};
-			name = Release;
-		};
-		_ReleaseConf_MD5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = "swift-pg.xcodeproj/MD5_Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-			};
-			name = Release;
-		};
-		_ReleaseConf_Socket /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = "swift-pg.xcodeproj/Socket_Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-			};
-			name = Release;
-		};
-		_ReleaseConf_swift_pg /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
-				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
-			};
-			name = Release;
-		};
-		"___DebugConf_CryptoEssentials" /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = "swift-pg.xcodeproj/CryptoEssentials_Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		"___DebugConf_MD5" /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = "swift-pg.xcodeproj/MD5_Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		"___DebugConf_Socket" /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = "swift-pg.xcodeproj/Socket_Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		"___DebugConf_swift_pg" /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
-				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		"_____Release_" /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = "__PBXFileRef_swift-pg.xcodeproj/Configs/Project.xcconfig" /* Project.xcconfig */;
-			buildSettings = {
-			};
-			name = Release;
-		};
-		"_______Debug_" /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = "__PBXFileRef_swift-pg.xcodeproj/Configs/Project.xcconfig" /* Project.xcconfig */;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		"___RootConfs_" /* Build configuration list for PBXProject "swift-pg" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				"_______Debug_" /* Debug */,
-				"_____Release_" /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		"_______Confs_CryptoEssentials" /* Build configuration list for PBXNativeTarget "CryptoEssentials" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				"___DebugConf_CryptoEssentials" /* Debug */,
-				_ReleaseConf_CryptoEssentials /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		"_______Confs_MD5" /* Build configuration list for PBXNativeTarget "MD5" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				"___DebugConf_MD5" /* Debug */,
-				_ReleaseConf_MD5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		"_______Confs_Socket" /* Build configuration list for PBXNativeTarget "Socket" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				"___DebugConf_Socket" /* Debug */,
-				_ReleaseConf_Socket /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		"_______Confs_swift_pg" /* Build configuration list for PBXNativeTarget "swift-pg" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				"___DebugConf_swift_pg" /* Debug */,
-				_ReleaseConf_swift_pg /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = __RootObject_ /* Project object */;
+    archiveVersion = 1;
+    classes = {};
+    objectVersion = 46;
+    rootObject = __RootObject_;
+    objects = {
+        __RootObject_ = {
+            isa = PBXProject;
+            attributes = {LastUpgradeCheck = 9999;};
+            buildConfigurationList = ___RootConfs_;
+            compatibilityVersion = 'Xcode 3.2';
+            developmentRegion = English;
+            hasScannedForEncodings = 0;
+            knownRegions = (en);
+            mainGroup = ___RootGroup_;
+            productRefGroup = ____Products_;
+            projectDirPath = '';
+            projectRoot = '';
+            targets = (______Target_Socket, ______Target_CryptoEssentials, ______Target_MD5, ______Target_swift_pg);
+        };
+        '__PBXFileRef_Package.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'Package.swift';
+            path = 'Package.swift';
+            sourceTree = '<group>';
+        };
+        ___RootGroup_ = {
+            isa = PBXGroup;
+            children = ('__PBXFileRef_Package.swift', _____Configs_, _____Sources_, Dependencies_, _______Tests_, ____Products_);
+            sourceTree = '<group>';
+        };
+        __PBXFileRef_Socket_Info.plist = {
+            isa = PBXFileReference;
+            lastKnownFileType = text.plist.xml;
+            name = 'Socket_Info.plist';
+            path = 'swift-pg.xcodeproj/Socket_Info.plist';
+            sourceTree = SOURCE_ROOT;
+        };
+        _______Group_Socket = {
+            isa = PBXGroup;
+            name = Socket;
+            path = 'Packages/Socket-0.5.20/Sources';
+            sourceTree = '<group>';
+            children = ('__PBXFileRef_Packages/Socket-0.5.20/Sources/Socket.swift', '__PBXFileRef_Packages/Socket-0.5.20/Sources/SocketProtocols.swift', '__PBXFileRef_Packages/Socket-0.5.20/Sources/SocketUtils.swift', __PBXFileRef_Socket_Info.plist);
+        };
+        '__PBXFileRef_Packages/Socket-0.5.20/Sources/Socket.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'Socket.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Packages/Socket-0.5.20/Sources/SocketProtocols.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'SocketProtocols.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Packages/Socket-0.5.20/Sources/SocketUtils.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'SocketUtils.swift';
+            sourceTree = '<group>';
+        };
+        ______Target_Socket = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = _______Confs_Socket;
+            buildPhases = (CompilePhase_Socket, ___LinkPhase_Socket);
+            buildRules = ();
+            dependencies = ();
+            name = Socket;
+            productName = Socket;
+            productReference = _____Product_Socket;
+            productType = 'com.apple.product-type.framework';
+        };
+        _____Product_Socket = {
+            isa = PBXFileReference;
+            explicitFileType = 'wrapper.framework';
+            path = 'Socket.framework';
+            sourceTree = BUILT_PRODUCTS_DIR;
+        };
+        CompilePhase_Socket = {
+            isa = PBXSourcesBuildPhase;
+            files = ('__src_cc_ref_Packages/Socket-0.5.20/Sources/Socket.swift', '__src_cc_ref_Packages/Socket-0.5.20/Sources/SocketProtocols.swift', '__src_cc_ref_Packages/Socket-0.5.20/Sources/SocketUtils.swift');
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        '__src_cc_ref_Packages/Socket-0.5.20/Sources/Socket.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/Socket-0.5.20/Sources/Socket.swift';
+        };
+        '__src_cc_ref_Packages/Socket-0.5.20/Sources/SocketProtocols.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/Socket-0.5.20/Sources/SocketProtocols.swift';
+        };
+        '__src_cc_ref_Packages/Socket-0.5.20/Sources/SocketUtils.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/Socket-0.5.20/Sources/SocketUtils.swift';
+        };
+        ___LinkPhase_Socket = {
+            isa = PBXFrameworksBuildPhase;
+            files = ();
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        _______Confs_Socket = {
+            isa = XCConfigurationList;
+            buildConfigurations = (___DebugConf_Socket, _ReleaseConf_Socket);
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Debug;
+        };
+        ___DebugConf_Socket = {
+            isa = XCBuildConfiguration;
+            buildSettings = { LD_RUNPATH_SEARCH_PATHS = '$(TOOLCHAIN_DIR)/usr/lib/swift/macosx'; PRODUCT_MODULE_NAME = '$(TARGET_NAME:c99extidentifier)'; ENABLE_TESTABILITY = 'YES'; OTHER_SWIFT_FLAGS = '$(inherited)'; INFOPLIST_FILE = 'swift-pg.xcodeproj/Socket_Info.plist'; FRAMEWORK_SEARCH_PATHS = '$(PLATFORM_DIR)/Developer/Library/Frameworks'; SWIFT_OPTIMIZATION_LEVEL = '-Onone'; OTHER_LDFLAGS = '$(inherited)'; PRODUCT_NAME = '$(TARGET_NAME:c99extidentifier)'; };
+            name = Debug;
+        };
+        _ReleaseConf_Socket = {
+            isa = XCBuildConfiguration;
+            buildSettings = { LD_RUNPATH_SEARCH_PATHS = '$(TOOLCHAIN_DIR)/usr/lib/swift/macosx'; PRODUCT_MODULE_NAME = '$(TARGET_NAME:c99extidentifier)'; ENABLE_TESTABILITY = 'YES'; OTHER_SWIFT_FLAGS = '$(inherited)'; INFOPLIST_FILE = 'swift-pg.xcodeproj/Socket_Info.plist'; FRAMEWORK_SEARCH_PATHS = '$(PLATFORM_DIR)/Developer/Library/Frameworks'; OTHER_LDFLAGS = '$(inherited)'; PRODUCT_NAME = '$(TARGET_NAME:c99extidentifier)'; };
+            name = Release;
+        };
+        __Dependency_Socket = {
+            isa = PBXTargetDependency;
+            target = ______Target_Socket;
+        };
+        __PBXFileRef_CryptoEssentials_Info.plist = {
+            isa = PBXFileReference;
+            lastKnownFileType = text.plist.xml;
+            name = 'CryptoEssentials_Info.plist';
+            path = 'swift-pg.xcodeproj/CryptoEssentials_Info.plist';
+            sourceTree = SOURCE_ROOT;
+        };
+        _______Group_CryptoEssentials = {
+            isa = PBXGroup;
+            name = CryptoEssentials;
+            path = 'Packages/CryptoEssentials-0.7.3/Sources';
+            sourceTree = '<group>';
+            children = ('__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/ArrayProtocol.swift', '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Base64.swift', '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/BlockMode.swift', '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/BytesSequence.swift', '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Cipher.swift', '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Compatibility.swift', '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Generics.swift', '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/HashProtocol.swift', '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/IntegerConvertible.swift', '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/IntExtension.swift', '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/NSData+Extensions.swift', '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Operators.swift', '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Padding.swift', '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/SecureBytes.swift', '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Utils.swift', __PBXFileRef_CryptoEssentials_Info.plist);
+        };
+        '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/ArrayProtocol.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'ArrayProtocol.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Base64.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'Base64.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/BlockMode.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'BlockMode.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/BytesSequence.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'BytesSequence.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Cipher.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'Cipher.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Compatibility.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'Compatibility.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Generics.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'Generics.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/HashProtocol.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'HashProtocol.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/IntegerConvertible.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'IntegerConvertible.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/IntExtension.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'IntExtension.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/NSData+Extensions.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'NSData+Extensions.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Operators.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'Operators.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Padding.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'Padding.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/SecureBytes.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'SecureBytes.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Utils.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'Utils.swift';
+            sourceTree = '<group>';
+        };
+        ______Target_CryptoEssentials = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = _______Confs_CryptoEssentials;
+            buildPhases = (CompilePhase_CryptoEssentials, ___LinkPhase_CryptoEssentials);
+            buildRules = ();
+            dependencies = ();
+            name = CryptoEssentials;
+            productName = CryptoEssentials;
+            productReference = _____Product_CryptoEssentials;
+            productType = 'com.apple.product-type.framework';
+        };
+        _____Product_CryptoEssentials = {
+            isa = PBXFileReference;
+            explicitFileType = 'wrapper.framework';
+            path = 'CryptoEssentials.framework';
+            sourceTree = BUILT_PRODUCTS_DIR;
+        };
+        CompilePhase_CryptoEssentials = {
+            isa = PBXSourcesBuildPhase;
+            files = ('__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/ArrayProtocol.swift', '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Base64.swift', '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/BlockMode.swift', '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/BytesSequence.swift', '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Cipher.swift', '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Compatibility.swift', '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Generics.swift', '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/HashProtocol.swift', '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/IntegerConvertible.swift', '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/IntExtension.swift', '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/NSData+Extensions.swift', '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Operators.swift', '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Padding.swift', '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/SecureBytes.swift', '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Utils.swift');
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/ArrayProtocol.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/ArrayProtocol.swift';
+        };
+        '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Base64.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Base64.swift';
+        };
+        '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/BlockMode.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/BlockMode.swift';
+        };
+        '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/BytesSequence.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/BytesSequence.swift';
+        };
+        '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Cipher.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Cipher.swift';
+        };
+        '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Compatibility.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Compatibility.swift';
+        };
+        '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Generics.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Generics.swift';
+        };
+        '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/HashProtocol.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/HashProtocol.swift';
+        };
+        '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/IntegerConvertible.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/IntegerConvertible.swift';
+        };
+        '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/IntExtension.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/IntExtension.swift';
+        };
+        '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/NSData+Extensions.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/NSData+Extensions.swift';
+        };
+        '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Operators.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Operators.swift';
+        };
+        '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Padding.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Padding.swift';
+        };
+        '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/SecureBytes.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/SecureBytes.swift';
+        };
+        '__src_cc_ref_Packages/CryptoEssentials-0.7.3/Sources/Utils.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/CryptoEssentials-0.7.3/Sources/Utils.swift';
+        };
+        ___LinkPhase_CryptoEssentials = {
+            isa = PBXFrameworksBuildPhase;
+            files = ();
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        _______Confs_CryptoEssentials = {
+            isa = XCConfigurationList;
+            buildConfigurations = (___DebugConf_CryptoEssentials, _ReleaseConf_CryptoEssentials);
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Debug;
+        };
+        ___DebugConf_CryptoEssentials = {
+            isa = XCBuildConfiguration;
+            buildSettings = { LD_RUNPATH_SEARCH_PATHS = '$(TOOLCHAIN_DIR)/usr/lib/swift/macosx'; PRODUCT_MODULE_NAME = '$(TARGET_NAME:c99extidentifier)'; ENABLE_TESTABILITY = 'YES'; OTHER_SWIFT_FLAGS = '$(inherited)'; INFOPLIST_FILE = 'swift-pg.xcodeproj/CryptoEssentials_Info.plist'; FRAMEWORK_SEARCH_PATHS = '$(PLATFORM_DIR)/Developer/Library/Frameworks'; SWIFT_OPTIMIZATION_LEVEL = '-Onone'; OTHER_LDFLAGS = '$(inherited)'; PRODUCT_NAME = '$(TARGET_NAME:c99extidentifier)'; };
+            name = Debug;
+        };
+        _ReleaseConf_CryptoEssentials = {
+            isa = XCBuildConfiguration;
+            buildSettings = { LD_RUNPATH_SEARCH_PATHS = '$(TOOLCHAIN_DIR)/usr/lib/swift/macosx'; PRODUCT_MODULE_NAME = '$(TARGET_NAME:c99extidentifier)'; ENABLE_TESTABILITY = 'YES'; OTHER_SWIFT_FLAGS = '$(inherited)'; INFOPLIST_FILE = 'swift-pg.xcodeproj/CryptoEssentials_Info.plist'; FRAMEWORK_SEARCH_PATHS = '$(PLATFORM_DIR)/Developer/Library/Frameworks'; OTHER_LDFLAGS = '$(inherited)'; PRODUCT_NAME = '$(TARGET_NAME:c99extidentifier)'; };
+            name = Release;
+        };
+        __Dependency_CryptoEssentials = {
+            isa = PBXTargetDependency;
+            target = ______Target_CryptoEssentials;
+        };
+        __PBXFileRef_MD5_Info.plist = {
+            isa = PBXFileReference;
+            lastKnownFileType = text.plist.xml;
+            name = 'MD5_Info.plist';
+            path = 'swift-pg.xcodeproj/MD5_Info.plist';
+            sourceTree = SOURCE_ROOT;
+        };
+        _______Group_MD5 = {
+            isa = PBXGroup;
+            name = MD5;
+            path = 'Packages/MD5-0.7.2/Sources';
+            sourceTree = '<group>';
+            children = ('__PBXFileRef_Packages/MD5-0.7.2/Sources/MD5.swift', __PBXFileRef_MD5_Info.plist);
+        };
+        '__PBXFileRef_Packages/MD5-0.7.2/Sources/MD5.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'MD5.swift';
+            sourceTree = '<group>';
+        };
+        ______Target_MD5 = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = _______Confs_MD5;
+            buildPhases = (CompilePhase_MD5, ___LinkPhase_MD5);
+            buildRules = ();
+            dependencies = (__Dependency_CryptoEssentials);
+            name = MD5;
+            productName = MD5;
+            productReference = _____Product_MD5;
+            productType = 'com.apple.product-type.framework';
+        };
+        _____Product_MD5 = {
+            isa = PBXFileReference;
+            explicitFileType = 'wrapper.framework';
+            path = 'MD5.framework';
+            sourceTree = BUILT_PRODUCTS_DIR;
+        };
+        CompilePhase_MD5 = {
+            isa = PBXSourcesBuildPhase;
+            files = ('__src_cc_ref_Packages/MD5-0.7.2/Sources/MD5.swift');
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        '__src_cc_ref_Packages/MD5-0.7.2/Sources/MD5.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Packages/MD5-0.7.2/Sources/MD5.swift';
+        };
+        ___LinkPhase_MD5 = {
+            isa = PBXFrameworksBuildPhase;
+            files = (_LinkFileRef_CryptoEssentials_via_MD5);
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        _LinkFileRef_CryptoEssentials_via_MD5 = {
+            isa = PBXBuildFile;
+            fileRef = _____Product_CryptoEssentials;
+        };
+        _______Confs_MD5 = {
+            isa = XCConfigurationList;
+            buildConfigurations = (___DebugConf_MD5, _ReleaseConf_MD5);
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Debug;
+        };
+        ___DebugConf_MD5 = {
+            isa = XCBuildConfiguration;
+            buildSettings = { LD_RUNPATH_SEARCH_PATHS = '$(TOOLCHAIN_DIR)/usr/lib/swift/macosx'; PRODUCT_MODULE_NAME = '$(TARGET_NAME:c99extidentifier)'; ENABLE_TESTABILITY = 'YES'; OTHER_SWIFT_FLAGS = '$(inherited)'; INFOPLIST_FILE = 'swift-pg.xcodeproj/MD5_Info.plist'; FRAMEWORK_SEARCH_PATHS = '$(PLATFORM_DIR)/Developer/Library/Frameworks'; SWIFT_OPTIMIZATION_LEVEL = '-Onone'; OTHER_LDFLAGS = '$(inherited)'; PRODUCT_NAME = '$(TARGET_NAME:c99extidentifier)'; };
+            name = Debug;
+        };
+        _ReleaseConf_MD5 = {
+            isa = XCBuildConfiguration;
+            buildSettings = { LD_RUNPATH_SEARCH_PATHS = '$(TOOLCHAIN_DIR)/usr/lib/swift/macosx'; PRODUCT_MODULE_NAME = '$(TARGET_NAME:c99extidentifier)'; ENABLE_TESTABILITY = 'YES'; OTHER_SWIFT_FLAGS = '$(inherited)'; INFOPLIST_FILE = 'swift-pg.xcodeproj/MD5_Info.plist'; FRAMEWORK_SEARCH_PATHS = '$(PLATFORM_DIR)/Developer/Library/Frameworks'; OTHER_LDFLAGS = '$(inherited)'; PRODUCT_NAME = '$(TARGET_NAME:c99extidentifier)'; };
+            name = Release;
+        };
+        __Dependency_MD5 = {
+            isa = PBXTargetDependency;
+            target = ______Target_MD5;
+        };
+        _______Group_swift_pg = {
+            isa = PBXGroup;
+            name = swift-pg;
+            path = 'Sources';
+            sourceTree = '<group>';
+            children = ('__PBXFileRef_Sources/BackendMessage.swift', '__PBXFileRef_Sources/ByteBuffer.swift', '__PBXFileRef_Sources/Digest.swift', '__PBXFileRef_Sources/FrontendMessage.swift', '__PBXFileRef_Sources/main.swift', '__PBXFileRef_Sources/NSData+Bytes.swift', '__PBXFileRef_Sources/PGType.swift', '__PBXFileRef_Sources/QueryResult.swift');
+        };
+        '__PBXFileRef_Sources/BackendMessage.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'BackendMessage.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/ByteBuffer.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'ByteBuffer.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/Digest.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'Digest.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/FrontendMessage.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'FrontendMessage.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/main.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'main.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/NSData+Bytes.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'NSData+Bytes.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/PGType.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'PGType.swift';
+            sourceTree = '<group>';
+        };
+        '__PBXFileRef_Sources/QueryResult.swift' = {
+            isa = PBXFileReference;
+            lastKnownFileType = sourcecode.swift;
+            name = 'QueryResult.swift';
+            sourceTree = '<group>';
+        };
+        ______Target_swift_pg = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = _______Confs_swift_pg;
+            buildPhases = (CompilePhase_swift_pg, ___LinkPhase_swift_pg);
+            buildRules = ();
+            dependencies = (__Dependency_CryptoEssentials, __Dependency_MD5, __Dependency_Socket);
+            name = swift-pg;
+            productName = swift_pg;
+            productReference = _____Product_swift_pg;
+            productType = 'com.apple.product-type.tool';
+        };
+        _____Product_swift_pg = {
+            isa = PBXFileReference;
+            explicitFileType = 'compiled.mach-o.executable';
+            path = 'swift-pg';
+            sourceTree = BUILT_PRODUCTS_DIR;
+        };
+        CompilePhase_swift_pg = {
+            isa = PBXSourcesBuildPhase;
+            files = ('__src_cc_ref_Sources/BackendMessage.swift', '__src_cc_ref_Sources/ByteBuffer.swift', '__src_cc_ref_Sources/Digest.swift', '__src_cc_ref_Sources/FrontendMessage.swift', '__src_cc_ref_Sources/main.swift', '__src_cc_ref_Sources/NSData+Bytes.swift', '__src_cc_ref_Sources/PGType.swift', '__src_cc_ref_Sources/QueryResult.swift');
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        '__src_cc_ref_Sources/BackendMessage.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/BackendMessage.swift';
+        };
+        '__src_cc_ref_Sources/ByteBuffer.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/ByteBuffer.swift';
+        };
+        '__src_cc_ref_Sources/Digest.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/Digest.swift';
+        };
+        '__src_cc_ref_Sources/FrontendMessage.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/FrontendMessage.swift';
+        };
+        '__src_cc_ref_Sources/main.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/main.swift';
+        };
+        '__src_cc_ref_Sources/NSData+Bytes.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/NSData+Bytes.swift';
+        };
+        '__src_cc_ref_Sources/PGType.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/PGType.swift';
+        };
+        '__src_cc_ref_Sources/QueryResult.swift' = {
+            isa = PBXBuildFile;
+            fileRef = '__PBXFileRef_Sources/QueryResult.swift';
+        };
+        ___LinkPhase_swift_pg = {
+            isa = PBXFrameworksBuildPhase;
+            files = (_LinkFileRef_CryptoEssentials_via_swift_pg, _LinkFileRef_MD5_via_swift_pg, _LinkFileRef_Socket_via_swift_pg);
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+        _LinkFileRef_CryptoEssentials_via_swift_pg = {
+            isa = PBXBuildFile;
+            fileRef = _____Product_CryptoEssentials;
+        };
+        _LinkFileRef_MD5_via_swift_pg = {
+            isa = PBXBuildFile;
+            fileRef = _____Product_MD5;
+        };
+        _LinkFileRef_Socket_via_swift_pg = {
+            isa = PBXBuildFile;
+            fileRef = _____Product_Socket;
+        };
+        _______Confs_swift_pg = {
+            isa = XCConfigurationList;
+            buildConfigurations = (___DebugConf_swift_pg, _ReleaseConf_swift_pg);
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Debug;
+        };
+        ___DebugConf_swift_pg = {
+            isa = XCBuildConfiguration;
+            buildSettings = { LD_RUNPATH_SEARCH_PATHS = '$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path'; FRAMEWORK_SEARCH_PATHS = '$(PLATFORM_DIR)/Developer/Library/Frameworks'; OTHER_SWIFT_FLAGS = '$(inherited)'; SWIFT_FORCE_STATIC_LINK_STDLIB = 'NO'; SWIFT_FORCE_DYNAMIC_LINK_STDLIB = 'YES'; SWIFT_OPTIMIZATION_LEVEL = '-Onone'; OTHER_LDFLAGS = '$(inherited)'; };
+            name = Debug;
+        };
+        _ReleaseConf_swift_pg = {
+            isa = XCBuildConfiguration;
+            buildSettings = { OTHER_SWIFT_FLAGS = '$(inherited)'; LD_RUNPATH_SEARCH_PATHS = '$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path'; FRAMEWORK_SEARCH_PATHS = '$(PLATFORM_DIR)/Developer/Library/Frameworks'; SWIFT_FORCE_STATIC_LINK_STDLIB = 'NO'; SWIFT_FORCE_DYNAMIC_LINK_STDLIB = 'YES'; OTHER_LDFLAGS = '$(inherited)'; };
+            name = Release;
+        };
+        __Dependency_swift_pg = {
+            isa = PBXTargetDependency;
+            target = ______Target_swift_pg;
+        };
+        '__PBXFileRef_swift-pg.xcodeproj/Configs/Project.xcconfig' = {
+            isa = PBXFileReference;
+            lastKnownFileType = text.xcconfig;
+            name = 'Project.xcconfig';
+            path = 'swift-pg.xcodeproj/Configs/Project.xcconfig';
+            sourceTree = '<group>';
+        };
+        _____Configs_ = {
+            isa = PBXGroup;
+            children = ('__PBXFileRef_swift-pg.xcodeproj/Configs/Project.xcconfig');
+            name = Configs;
+            sourceTree = '<group>';
+        };
+        _____Sources_ = {
+            isa = PBXGroup;
+            children = (_______Group_Socket, _______Group_CryptoEssentials, _______Group_MD5, _______Group_swift_pg);
+            name = Sources;
+            sourceTree = '<group>';
+        };
+        Dependencies_ = {
+            isa = PBXGroup;
+            children = (_______Group_Socket, _______Group_CryptoEssentials, _______Group_MD5);
+            name = Dependencies;
+            sourceTree = '<group>';
+        };
+        ____Products_ = {
+            isa = PBXGroup;
+            children = (_____Product_Socket, _____Product_CryptoEssentials, _____Product_MD5, _____Product_swift_pg);
+            name = Products;
+            sourceTree = '<group>';
+        };
+        _______Debug_ = {
+            isa = XCBuildConfiguration;
+            baseConfigurationReference = '__PBXFileRef_swift-pg.xcodeproj/Configs/Project.xcconfig';
+            buildSettings = {};
+            name = Debug;
+        };
+        _____Release_ = {
+            isa = XCBuildConfiguration;
+            baseConfigurationReference = '__PBXFileRef_swift-pg.xcodeproj/Configs/Project.xcconfig';
+            buildSettings = {};
+            name = Release;
+        };
+        ___RootConfs_ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (_______Debug_, _____Release_);
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Debug;
+        };
+    };
 }
