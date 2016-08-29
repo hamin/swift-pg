@@ -19,44 +19,6 @@ public struct QueryResult {
 
     static let PGDateFormatter: DateFormatter = DateFormatter()
 
-
-    static func formatDate(dateString:String) -> NSDate {
-
-        if QueryResult.PGDateFormatter.dateFormat == nil {
-            QueryResult.PGDateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ssZZ"
-        }
-
-        let ts:String
-
-//        if ((dateString.range(of: ".")?.lowerBound) != nil) {
-//            ts = String("\(dateString) +0000")
-//        } else {
-//            ts = String("\(dateString.substring(to: (dateString.range(of: ".")?.lowerBound)!)) +0000")
-//        }
-
-//        if dateString.rangeOfString(".").location != NSNotFound {
-//            ts = "\(dateString.substringToIndex(dateString.startIndex.advancedBy(dateString.rangeOfString(".").location))) +0000"
-//        }
-//        else {
-//            ts = "\(dateString) +0000"
-//        }
-
-        if let range: Range<String.Index> = dateString.range(of: ".") {
-            let index: Int = dateString.distance(from: dateString.startIndex, to: range.lowerBound)
-//            var start = advance(dateString.startIndex, index)
-
-//            var end = advance(dateString.startIndex, index + dateString.length)
-//            ts =  dateString.substringWithRange(Range<String.Index>(start: dateString.startIndex, end: index))
-            ts = dateString.substring(with: range)
-
-//            ts = dateString.substring(to: index) + " +0000"
-        } else {
-            ts = "\(dateString) +0000"
-        }
-
-        return QueryResult.PGDateFormatter.date(from: ts)! as NSDate
-    }
-
     init(messages: [BackendMessage]) {
 
         for msg in messages {
@@ -86,29 +48,21 @@ public struct QueryResult {
     }
 
     static func timeFromResult(s:String) -> NSDate {
-
         return NSDate()
     }
 
-    static func timeStampFromResult(s:String) -> NSDate {
-
-//        return NSDate()
+    static func timeStampFromResult(s:String) -> NSDate? {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSX"
+//        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
 
         guard let date = dateFormatter.date(from: s) else {
-//            assert(false, "no date from string")
-            return NSDate()
+            return nil
         }
-
-//        dateFormatter.dateFormat = "yyyy MMM EEEE HH:mm"
-//        dateFormatter.timeZone = NSTimeZone(name: "UTC")
         return date as NSDate
     }
 
     static func timeIntervalFromResult(s:String) -> NSDate {
-
         return NSDate()
     }
 
@@ -165,7 +119,13 @@ public struct QueryResult {
                     break
                 case .Timestamp, .TimestampTZ:
                     if let stringVal = row[i] as? String {
-                        r[field.field] = QueryResult.timeStampFromResult(s: stringVal)
+                        if let tzResult = QueryResult.timeStampFromResult(s: stringVal) {
+                            r[field.field] = tzResult
+                        } else {
+                            r[field.field] = stringVal
+                        }
+                        print(r[field.field])
+                        
                     } else {
                         r[field.field] = nil
                     }
