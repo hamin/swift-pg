@@ -120,7 +120,7 @@ final class ByteBuffer {
     }
     
     init(data:NSData, index:Int=0){
-        self.buffer = NSMutableData(data: data);
+        self.buffer = NSMutableData(data: data as Data)
         self.readIndex = index;
     }
     
@@ -231,7 +231,7 @@ final class ByteBuffer {
     
     func decodeString() -> String? {
         if let data = decodeData() {
-            return String(data: data, encoding: NSUTF8StringEncoding)
+            return String(data: data as Data, encoding: String.Encoding.utf8)
         }
         return nil;
     }
@@ -241,7 +241,7 @@ final class ByteBuffer {
         if(length > 0){
             let data =  buffer.subdata(with: NSRange(location: readIndex, length: length));
             readIndex += length;
-            return data;
+            return data as NSData?;
         }
         return nil;
     }
@@ -261,7 +261,7 @@ final class ByteBuffer {
         if stringLength > 0 {
             let data =  buffer.subdata(with: NSRange(location: readIndex, length: stringLength));
             readIndex += stringLength;
-            return String(data: data, encoding: NSUTF8StringEncoding)
+            return String(data: data, encoding: String.Encoding.utf8)
         }
         return nil
     }

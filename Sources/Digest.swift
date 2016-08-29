@@ -8,11 +8,11 @@
 
 import Foundation
 
-internal extension NSData {
-    var bufferPointer: UnsafeBufferPointer<UInt8> {
-        return UnsafeBufferPointer<UInt8>(start: UnsafePointer(self.bytes), count: self.length)
-    }
-}
+//internal extension NSData {
+//    var bufferPointer: UnsafeBufferPointer<UInt8> {
+//        return UnsafeBufferPointer<UInt8>(start: UnsafePointer(self.bytes), count: self.length)
+//    }
+//}
 
 internal extension UInt8 {
     private static let allHexits: [Character] = Array("0123456789abcdef".characters)
@@ -41,11 +41,11 @@ final public class Digest: Equatable, Hashable {
     }()
     
     /// The digest as a hexadecimal string.
-    public lazy var hex: String = self.bytes.map { byte in byte.toHex() }.reduce("", combine: +)
+    public lazy var hex: String = self.bytes.map { byte in byte.toHex() }.reduce("", +)
     
     /// The digest as a base64-encoded String.
-    public func base64WithOptions(options: NSDataBase64EncodingOptions) -> String {
-        return data.base64EncodedString(options)
+    public func base64WithOptions(options: NSData.Base64EncodingOptions) -> String {
+        return data.base64EncodedString(options: options)
     }
     
     /// The digest as an array of base64-encoded bytes.
@@ -56,8 +56,8 @@ final public class Digest: Equatable, Hashable {
 //    }
     
     /// The digest as an NSData object of base64-encoded bytes.
-    public func base64DataWithOptions(options: NSDataBase64EncodingOptions) -> NSData {
-        return data.base64EncodedData(options)
+    public func base64DataWithOptions(options: NSData.Base64EncodingOptions) -> NSData {
+        return data.base64EncodedData(options: options) as NSData
     }
     
     /// Creates a Digest from an array of bytes. You should not normally need to
@@ -78,7 +78,7 @@ final public class Digest: Equatable, Hashable {
         // algorithms, since each bit should contain as much entropy as
         // every other.
         var value: Int = 0
-        let usedBytes = self.bytes[0 ..< min(self.bytes.count, sizeof(Int))]
+        let usedBytes = self.bytes[0 ..< min(self.bytes.count, MemoryLayout<Int>.size)]
         
         for byte in usedBytes {
             value <<= 8

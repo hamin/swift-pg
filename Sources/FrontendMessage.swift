@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MD5
+//import MD5
 
 public enum FrontendMessageType: String {
     case StartUp = "S"
@@ -43,7 +43,7 @@ public struct StartupMessage: FrontendMessage {
         
         self.data.appendInt32(value: Int32(connectionData.length) + 8)
         self.data.appendInt32(value: Int32(StartupMessage.protocolVersion))
-        self.data.append(connectionData)
+        self.data.append((connectionData as NSData) as Data)
         //    self.data(value: "")
     }
 }
@@ -62,7 +62,7 @@ public struct QueryMessage: FrontendMessage {
     
     init(query:String) {
         self.data.appendStringWithoutTerminator(value: "Q")
-        self.data.appendInt32(value: query.lengthOfBytes(using: NSUTF8StringEncoding) + 5)
+        self.data.appendInt32(value: query.lengthOfBytes(using: String.Encoding.utf8) + 5)
         self.data.appendString(value: query)
     }
 }
@@ -101,13 +101,13 @@ func makePasswordMessage(password:String, encrypted:Bool, user:String, salt:Stri
     var pwd = ""
     
     if encrypted == true {
-        let passUserMD5 = MD5.calculate(password + user)
-        let passUserMD55DigestHex = Digest(bytes: passUserMD5).hex
-        
-        let md5hash = MD5.calculate(passUserMD55DigestHex + salt)
-        let md5hashDigextHex = Digest(bytes: md5hash).hex
-        
-        pwd = "md5" + md5hashDigextHex
+//        let passUserMD5 = MD5.calculate(password + user)
+//        let passUserMD55DigestHex = Digest(bytes: passUserMD5).hex
+//        
+//        let md5hash = MD5.calculate(passUserMD55DigestHex + salt)
+//        let md5hashDigextHex = Digest(bytes: md5hash).hex
+//        
+//        pwd = "md5" + md5hashDigextHex
     }
     
     messageLength += pwd.utf16.count

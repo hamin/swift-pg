@@ -12,17 +12,17 @@ public extension NSMutableData {
     
     func appendInt32(value : Int32) {
         var val = value.bigEndian
-        self.append(&val, length: sizeofValue(val))
+        self.append(&val, length: MemoryLayout.size(ofValue: val))
     }
     
     func appendInt16(value : Int16) {
         var val = value.bigEndian
-        self.append(&val, length: sizeofValue(val))
+        self.append(&val, length: MemoryLayout.size(ofValue: val))
     }
     
     func appendInt8(value : Int8) {
         var val = value
-        self.append(&val, length: sizeofValue(val))
+        self.append(&val, length: MemoryLayout.size(ofValue: val))
     }
     
     func appendString(value : String) {

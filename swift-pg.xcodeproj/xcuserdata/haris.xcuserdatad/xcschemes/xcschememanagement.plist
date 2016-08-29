@@ -17,16 +17,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>______Target_CryptoEssentials</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>______Target_MD5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>______Target_Socket</key>
 		<dict>
 			<key>primary</key>

@@ -46,7 +46,7 @@ var blueSocket: Socket
 //let backgroundQueue = backgroundThread()
 
 func handleMessage(data:NSMutableData, socket:Socket) {
-    let d = NSMutableData(data: data)
+    let d = NSMutableData(data: data as Data)
     let ident = d.firstASCIIByte()
     
     print("ident: \(ident)")
@@ -94,7 +94,7 @@ func handleMessage(data:NSMutableData, socket:Socket) {
 }
 
 func handleAuth(data:NSMutableData, socket:Socket) {
-    let d = NSMutableData(data: data)
+    let d = NSMutableData(data: data as Data)
 //    let buf = ByteBuffer(buffer: d)
     let buf = ByteBuffer(data: d, index: 0)
     buf.readIndex = 5

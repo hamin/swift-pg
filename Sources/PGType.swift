@@ -203,7 +203,7 @@ public enum PGType: Int {
     case RegtypeArray = 2211   /// REGTYPE&#91;&#93;
     case Record = 2249   /// RECORD
     case Cstring = 2275   /// CSTRING
-    case Any = 2276   /// ANY
+    case PGAny = 2276   /// ANY
     case AnyArray = 2277   /// ANYARRAY
     case Void = 2278   /// VOID
     case Trigger = 2279   /// TRIGGER
@@ -369,7 +369,7 @@ public enum PGType: Int {
         case .RegtypeArray: return "_regtype"
         case .Record: return "record"
         case .Cstring: return "cstring"
-        case .Any: return "any"
+        case .PGAny: return "any"
         case .AnyArray: return "anyarray"
         case .Void: return "void"
         case .Trigger: return "trigger"
@@ -536,7 +536,7 @@ public enum PGType: Int {
         case .RegtypeArray: return .ArrayRegtype
         case .Record: return .Pseudo
         case .Cstring: return .Pseudo
-        case .Any: return .Pseudo
+        case .PGAny: return .Pseudo
         case .AnyArray: return .Pseudo
         case .Void: return .Pseudo
         case .Trigger: return .Pseudo
@@ -588,7 +588,7 @@ public enum PGType: Int {
         }
     }
 
-    func swiftType() -> Swift.Any {
+    func swiftType() -> Any {
         switch self {
         case .Bool: return Swift.Bool
 //        case .Bytea: return .Simple
@@ -752,7 +752,7 @@ public enum PGType: Int {
 //        case .RegnamespaceArray: return .ArrayRegnamespace
 //        case .Regrole: return .Simple
 //        case .RegroleArray: return .ArrayRegrole
-        default: return Swift.Any
+        default: return Swift.String
         }
     }
 }
